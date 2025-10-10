@@ -1,0 +1,17 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "realEstate": "Immobilier",
+    "property": "Propriété",
+    "elementor": "Elementor",
+    "blog": "Blog",
+    "others": "Autres",
+    "contact": "Contact"
+  },
+  "common": {
+    "submit": "Soumettre",
+    "search": "Rechercher",
+    "readMore": "Lire la suite",
+    "contactUs": "Contactez-nous"
+  }
+}

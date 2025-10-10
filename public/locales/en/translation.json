@@ -1,0 +1,17 @@
+{
+  "nav": {
+    "home": "Home",
+    "realEstate": "Real Estate",
+    "property": "Property",
+    "elementor": "Elementor",
+    "blog": "Blog",
+    "others": "Others",
+    "contact": "Contact"
+  },
+  "common": {
+    "submit": "Submit",
+    "search": "Search",
+    "readMore": "Read More",
+    "contactUs": "Contact Us"
+  }
+}
