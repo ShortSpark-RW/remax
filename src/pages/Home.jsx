@@ -159,8 +159,8 @@ const Home = () => {
       {/* Featured Properties Section */}
       <section className="py-20 bg-white relative">
         {/* Updated diagonal separators */}
-        <div className="absolute top-0 left-0 w-full h-24 bg-gray-50 transform skew-y-2 origin-top-left z-10"></div>
-        <div className="absolute bottom-0 left-0 w-full h-24 bg-white transform -skew-y-2 origin-bottom-left z-10"></div>
+        {/* <div className="absolute top-0 left-0 w-full h-24 bg-gray-50 transform skew-y-2 origin-top-left z-10"></div>
+        <div className="absolute bottom-0 left-0 w-full h-24 bg-white transform -skew-y-2 origin-bottom-left z-10"></div> */}
         
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
@@ -205,8 +205,8 @@ const Home = () => {
       {/* For Sale Section */}
       <section className="py-20 relative bg-white">
         {/* Updated diagonal separators */}
-        <div className="absolute top-0 left-0 w-full h-24 bg-white transform -skew-y-2 origin-top-left z-10"></div>
-        <div className="absolute bottom-0 left-0 w-full h-24 bg-gray-50 transform skew-y-2 origin-bottom-left z-10"></div>
+        {/* <div className="absolute top-0 left-0 w-full h-24 bg-white transform -skew-y-2 origin-top-left z-10"></div>
+        <div className="absolute bottom-0 left-0 w-full h-24 bg-gray-50 transform skew-y-2 origin-bottom-left z-10"></div> */}
         
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
@@ -239,8 +239,8 @@ const Home = () => {
       {/* For Rent Section */}
       <section className="py-20 bg-white relative">
         {/* Updated diagonal separators */}
-        <div className="absolute top-0 left-0 w-full h-24 bg-gray-50 transform skew-y-2 origin-top-left z-10"></div>
-        <div className="absolute bottom-0 left-0 w-full h-24 bg-white transform -skew-y-2 origin-bottom-left z-10"></div>
+        {/* <div className="absolute top-0 left-0 w-full h-24 bg-gray-50 transform skew-y-2 origin-top-left z-10"></div>
+        <div className="absolute bottom-0 left-0 w-full h-24 bg-white transform -skew-y-2 origin-bottom-left z-10"></div> */}
         
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
@@ -273,8 +273,8 @@ const Home = () => {
       {/* Call to Action Banner */}
       <section className="py-20 relative overflow-hidden">
         {/* Updated diagonal separators */}
-        <div className="absolute top-0 left-0 w-full h-24 bg-white transform -skew-y-2 origin-top-left z-10"></div>
-        <div className="absolute bottom-0 left-0 w-full h-24 bg-white transform skew-y-2 origin-bottom-left z-10"></div>
+        {/* <div className="absolute top-0 left-0 w-full h-24 bg-white transform -skew-y-2 origin-top-left z-10"></div>
+        <div className="absolute bottom-0 left-0 w-full h-24 bg-white transform skew-y-2 origin-bottom-left z-10"></div> */}
         
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-80"
@@ -315,8 +315,8 @@ const Home = () => {
       {/* Agents Section */}
       <section className="py-20 relative">
         {/* Diagonal separator */}
-        <div className="absolute top-0 left-0 w-full h-16 bg-white transform -skew-y-1 origin-top-left"></div>
-        <div className="absolute bottom-0 left-0 w-full h-16 bg-gray-50 transform skew-y-1 origin-bottom-left"></div>
+        {/* <div className="absolute top-0 left-0 w-full h-16 bg-white transform -skew-y-1 origin-top-left"></div>
+        <div className="absolute bottom-0 left-0 w-full h-16 bg-gray-50 transform skew-y-1 origin-bottom-left"></div> */}
         
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
@@ -349,8 +349,8 @@ const Home = () => {
       {/* Testimonials Section */}
       <section className="py-20 bg-teal-600 relative">
         {/* Diagonal separators */}
-        <div className="absolute top-0 left-0 w-full h-16 bg-gray-50 transform skew-y-1 origin-top-left"></div>
-        <div className="absolute bottom-0 left-0 w-full h-16 bg-white transform -skew-y-1 origin-bottom-left"></div>
+        {/* <div className="absolute top-0 left-0 w-full h-16 bg-gray-50 transform skew-y-1 origin-top-left"></div>
+        <div className="absolute bottom-0 left-0 w-full h-16 bg-white transform -skew-y-1 origin-bottom-left"></div> */}
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center relative">
@@ -379,8 +379,8 @@ const Home = () => {
       {/* News & Updates Section */}
       <section className="py-20 bg-white relative">
         {/* Diagonal separator */}
-        <div className="absolute top-0 left-0 w-full h-16 bg-white transform -skew-y-1 origin-top-left"></div>
-        <div className="absolute bottom-0 left-0 w-full h-16 bg-gray-50 transform skew-y-1 origin-bottom-left"></div>
+        {/* <div className="absolute top-0 left-0 w-full h-16 bg-white transform -skew-y-1 origin-top-left"></div>
+        <div className="absolute bottom-0 left-0 w-full h-16 bg-gray-50 transform skew-y-1 origin-bottom-left"></div> */}
         
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
@@ -439,8 +439,8 @@ const Home = () => {
       {/* Features Section */}
       <section className="py-20 relative">
         {/* Diagonal separator */}
-        <div className="absolute top-0 left-0 w-full h-16 bg-gray-50 transform -skew-y-1 origin-top-left"></div>
-        <div className="absolute bottom-0 left-0 w-full h-16 bg-white transform skew-y-1 origin-bottom-left"></div>
+        {/* <div className="absolute top-0 left-0 w-full h-16 bg-gray-50 transform -skew-y-1 origin-top-left"></div>
+        <div className="absolute bottom-0 left-0 w-full h-16 bg-white transform skew-y-1 origin-bottom-left"></div> */}
         
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
@@ -480,8 +480,8 @@ const Home = () => {
       {/* Bottom Call to Action */}
       <section className="py-20 bg-teal-600 relative overflow-hidden">
         {/* Diagonal separators */}
-        <div className="absolute top-0 left-0 w-full h-16 bg-white transform -skew-y-1 origin-top-left"></div>
-        <div className="absolute bottom-0 left-0 w-full h-16 bg-white transform skew-y-1 origin-bottom-left"></div>
+        {/* <div className="absolute top-0 left-0 w-full h-16 bg-white transform -skew-y-1 origin-top-left"></div>
+        <div className="absolute bottom-0 left-0 w-full h-16 bg-white transform skew-y-1 origin-bottom-left"></div> */}
         
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
@@ -522,8 +522,8 @@ const Home = () => {
       {/* Partners Section */}
       <section className="py-20 bg-white relative">
         {/* Diagonal separator */}
-        <div className="absolute top-0 left-0 w-full h-16 bg-teal-600 transform -skew-y-1 origin-top-left"></div>
-        <div className="absolute bottom-0 left-0 w-full h-16 bg-gray-800 transform skew-y-1 origin-bottom-left"></div>
+        {/* <div className="absolute top-0 left-0 w-full h-16 bg-teal-600 transform -skew-y-1 origin-top-left"></div>
+        <div className="absolute bottom-0 left-0 w-full h-16 bg-gray-800 transform skew-y-1 origin-bottom-left"></div> */}
         
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
