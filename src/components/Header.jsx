@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Phone, User, Search } from 'lucide-react';
-import logo from '../assets/logo.svg';
+import logo from '../assets/logo.png';
 import logoDark from '../assets/logo-dark.svg';
 import { useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -14,12 +14,19 @@ const Header = () => {
   const location = useLocation();
 
   const navItems = [
-    { name: t('nav.home'), href: '/' },
-    { name: t('nav.realEstate'), href: '/properties', active: true },
-    { name: t('nav.property'), href: '/property' },
-    { name: t('nav.elementor'), href: '/elementor' },
-    { name: t('nav.blog'), href: '/blog' },
-
+    { key: 'nav.home', href: '/' },
+    // { key: 'nav.buy', href: '/buy' },
+    // { key: 'nav.sale', href: '/sale' },
+    // { key: 'nav.rent', href: '/rent' },
+    // { key: 'nav.propertyManagement', href: '/property-management' },
+    // { key: 'nav.propertyEvaluation', href: '/property-evaluation' },
+    { key: 'nav.communities', href: '/communities' },
+    { key: 'nav.developers', href: '/developers' },
+    { key: 'nav.featuredProjects', href: '/featured-projects' },
+    { key: 'nav.more', href: '/more' },
+    { key: 'nav.aboutUs', href: '/about' },
+    { key: 'nav.careers', href: '/careers' },
+    { key: 'nav.contactUs', href: '/contact' }
   ];
 
   return (
@@ -39,29 +46,32 @@ const Header = () => {
             transition={{ duration: 0.2 }}
           >
             {/* choose logo variant based on current page (home uses white logo on dark bg) */}
-            <img src={location.pathname === '/' ? logo : logoDark} alt="EMAX Technologies" className="h-8 w-auto" />
+            <img src={location.pathname === '/' ? logo : logo} alt="EMAX Technologies" className="h-16 w-auto" />
           </motion.div>
 
           {/* Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            {navItems.map((item, index) => (
-              <motion.a
-                key={item.name}
-                href={item.href}
-                className={`px-3 py-2 text-sm font-medium transition-colors duration-200 ${
-                  item.active 
-                    ? 'bg-orange-500 text-white' 
-                    : 'text-gray-300 hover:text-white hover:bg-gray-700'
-                }`}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-              >
-                {item.name}
-              </motion.a>
-            ))}
+            {navItems.map((item, index) => {
+              const isActive = location.pathname === item.href || location.pathname.startsWith(item.href + '/');
+              return (
+                <motion.a
+                  key={item.key}
+                  href={item.href}
+                  className={`px-3 py-2 text-sm font-medium transition-colors duration-200 ${
+                    isActive
+                      ? 'bg-orange-500 text-white'
+                      : 'text-gray-300 hover:text-white hover:bg-gray-700'
+                  }`}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  {t(item.key)}
+                </motion.a>
+              );
+            })}
           </nav>
 
           {/* Contact Info & Actions */}

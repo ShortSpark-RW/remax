@@ -8,6 +8,7 @@ import ContactForm from '../components/ContactForm';
 import HeroSearchBar from '../components/HeroSearchBar';
 import { properties, agents, testimonials, newsArticles, features } from '../data/sampleData';
 import background from '../assets/background.jpg';
+import bgvid1 from '../assets/bgvid1.mp4';
 import { useTranslation } from 'react-i18next'; 
 
 const Home = () => {
@@ -31,50 +32,62 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="relative h-screen bg-gradient-to-r from-slate-800 to-slate-900 overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
-          style={{
-            backgroundImage: `url(${background})`
-          }}
+      <section className="relative min-h-[100vh] flex items-center justify-center overflow-hidden">
+        <video
+          className="absolute inset-0 w-full h-full object-cover opacity-70"
+          src={bgvid1}
+          autoPlay
+          loop
+          muted
+          playsInline
         />
-        
-        <div className="relative z-10 container mx-auto px-4 h-full flex flex-col justify-center">
-          {/* Hero Content */}
-          <div className="text-center text-white mb-12">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <h1 className="text-5xl font-bold mb-6 leading-tight">
-                {t('Find Your Dream Home with EMAX Technologies')}
-              </h1>
-              <p className="text-xl mb-8 text-gray-300 max-w-2xl mx-auto">
-                {t('hero.subtitle')}
-              </p>
-            </motion.div>
+        <div className="relative z-10 container mx-auto px-4 h-full">
+          <div className="grid grid-cols-1 lg:grid-cols-3 h-full">
+            {/* Left: Hero text (left-aligned on large) */}
+            <div className="lg:col-span-2 flex flex-col justify-center items-start text-white py-12">
+              <div className="w-full lg:max-w-2xl">
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8 }}
+                >
+                  <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-left">
+                    {t('Find Your Dream Home with REMAX Technologies')}
+                  </h1>
+                  <p className="text-lg md:text-xl mb-8 text-gray-300 max-w-2xl">
+                    {t('hero.subtitle')}
+                  </p>
+                </motion.div>
+              </div>
+            </div>
+
+            {/* Right: Contact form (sticky on large screens) */}
+            <div className="hidden lg:flex lg:col-span-1 items-start justify-end">
+              <div className="w-full max-w-sm sticky top-8">
+                <ContactForm title="Let Us Call You!" />
+              </div>
+            </div>
           </div>
 
-          {/* Hero Search Bar */}
-          <motion.div
-            className="max-w-6xl mx-auto"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-          >
-            <HeroSearchBar />
-          </motion.div>
+          {/* Search Bar - fixed to bottom center of hero, with right padding on large to avoid contact form */}
+          <div className="absolute left-0 right-0 bottom-0 flex justify-center px-4 lg:px-24">
+            <div className="w-full max-w-7xl lg:pr-72">
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+              >
+                <HeroSearchBar />
+              </motion.div>
+            </div>
+          </div>
 
-          {/* Contact Form Overlay */}
-          <motion.div
-            className="absolute top-8 right-8 max-w-sm"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-          >
-            <ContactForm title="Let Us Call You!" />
-          </motion.div>
+          {/* Mobile: contact form displayed under content (so it doesn't overlap search) */}
+          <div className="lg:hidden mt-6">
+            <div className="w-full max-w-sm mx-auto">
+              <ContactForm title="Let Us Call You!" />
+            </div>
+          </div>
         </div>
       </section>
 

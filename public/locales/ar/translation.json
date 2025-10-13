@@ -1,12 +1,18 @@
 {
   "nav": {
     "home": "الرئيسية",
-    "realEstate": "العقارات",
-    "property": "العقار",
-    "elementor": "إليمنتور",
-    "blog": "المدونة",
-    "others": "أخرى",
-    "contact": "اتصل بنا"
+    "buy": "شراء",
+    "sale": "بيع/إعادة بيع",
+    "rent": "إيجار",
+    "propertyManagement": "إدارة الممتلكات",
+    "propertyEvaluation": "تقييم العقار",
+    "communities": "المجتمعات",
+    "developers": "المطورون",
+    "featuredProjects": "مشروعات مميزة",
+    "more": "المزيد",
+    "aboutUs": "من نحن",
+    "careers": "الوظائف",
+    "contactUs": "اتصل بنا"
   },
   "common": {
     "submit": "إرسال",

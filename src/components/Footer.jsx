@@ -1,7 +1,8 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Mail, Facebook, Twitter, Linkedin, Instagram, Youtube } from 'lucide-react';
-import logo from '../assets/logo.svg';
+import logo from '../assets/logo.png';
 import { Formik, Form, Field } from 'formik';
 import { newsletterSchema } from '../utils/validationSchemas';
 
@@ -42,11 +43,11 @@ const Footer = () => {
             viewport={{ once: true }}
           >
             <div className="flex items-center mb-4">
-              <img src={logo} alt="EMAX Technologies" className="h-8 w-auto mr-3" />
-              <div>
+              <img src={logo} alt="EMAX Technologies" className="h-32 w-auto mr-3" />
+              {/* <div>
                 <h3 className="text-lg font-bold">REAL HOMES</h3>
                 <p className="text-sm text-gray-400">/ Simply #1 Real Estate Theme</p>
-              </div>
+              </div> */}
             </div>
             
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
@@ -165,7 +166,7 @@ const Footer = () => {
           className="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center"
         >
           <p className="text-gray-400 text-sm">© 2025. All rights reserved.</p>
-          <p className="text-gray-400 text-sm">Designed by Inspiry Themes</p>
+          <p className="text-gray-400 text-sm">Designed by SHORTSPARK Ltd.</p>
         </motion.div>
       </div>
     </footer>

@@ -1,12 +1,18 @@
 {
   "nav": {
     "home": "Accueil",
-    "realEstate": "Immobilier",
-    "property": "Propriété",
-    "elementor": "Elementor",
-    "blog": "Blog",
-    "others": "Autres",
-    "contact": "Contact"
+    "buy": "Acheter",
+    "sale": "Vente/ revente",
+    "rent": "Location",
+    "propertyManagement": "Gestion Immobilière",
+    "propertyEvaluation": "Évaluation de Propriété",
+    "communities": "Communautés",
+    "developers": "Promoteurs",
+    "featuredProjects": "Projets en vedette",
+    "more": "Plus",
+    "aboutUs": "À propos",
+    "careers": "Carrières",
+    "contactUs": "Contactez-nous"
   },
   "common": {
     "submit": "Soumettre",

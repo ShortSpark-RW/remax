@@ -1,12 +1,18 @@
 {
   "nav": {
     "home": "Home",
-    "realEstate": "Real Estate",
-    "property": "Property",
-    "elementor": "Elementor",
-    "blog": "Blog",
-    "others": "Others",
-    "contact": "Contact"
+    "buy": "Buy",
+    "sale": "Sale/ resale",
+    "rent": "Rent",
+    "propertyManagement": "Property Management",
+    "propertyEvaluation": "Property Evaluation",
+    "communities": "Communities",
+    "developers": "Developers",
+    "featuredProjects": "Featured Projects",
+    "more": "More",
+    "aboutUs": "About Us",
+    "careers": "Careers",
+    "contactUs": "Contact Us"
   },
   "common": {
     "submit": "Submit",

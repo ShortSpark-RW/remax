@@ -1,7 +1,14 @@
+import homeImg from '../assets/images/home.jpg';
+import villaImg from '../assets/images/villa.jpg';
+import aptImg from '../assets/images/apartment.jpg';
+import condoImg from '../assets/images/condo.jpg';
+import familyImg from '../assets/images/family.jpg';
+import townhouseImg from '../assets/images/townhouse.jpg';
+
 export const properties = [
   {
     id: 1,
-    image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=500&h=300&fit=crop',
+    image: homeImg,
     title: 'Home in Merrick Way',
     location: 'Merrick Way, Miami, FL',
     rating: 4.8,
@@ -20,7 +27,7 @@ export const properties = [
   },
   {
     id: 2,
-    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=500&h=300&fit=crop',
+    image: villaImg,
     title: 'Villa on Hollywood Boulevard',
     location: 'Hollywood Boulevard, FL',
     rating: 4.9,
@@ -40,7 +47,7 @@ export const properties = [
   },
   {
     id: 3,
-    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500&h=300&fit=crop',
+    image: aptImg,
     title: 'Modern Apartment Downtown',
     location: 'Downtown Miami, FL',
     rating: 4.7,
@@ -59,7 +66,7 @@ export const properties = [
   },
   {
     id: 4,
-    image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=500&h=300&fit=crop',
+    image: condoImg,
     title: 'Luxury Condo with Ocean View',
     location: 'South Beach, Miami, FL',
     rating: 5.0,
@@ -78,7 +85,7 @@ export const properties = [
   },
   {
     id: 5,
-    image: 'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=500&h=300&fit=crop',
+    image: familyImg,
     title: 'Family Home in Coral Gables',
     location: 'Coral Gables, FL',
     rating: 4.6,
@@ -96,7 +103,7 @@ export const properties = [
   },
   {
     id: 6,
-    image: 'https://images.unsplash.com/photo-1600566753151-384129cf4e3e?w=500&h=300&fit=crop',
+    image: townhouseImg,
     title: 'Contemporary Townhouse',
     location: 'Brickell, Miami, FL',
     rating: 4.8,
