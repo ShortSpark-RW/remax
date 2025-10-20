@@ -8,6 +8,7 @@ import ContactForm from '../components/ContactForm';
 import HeroSearchBar from '../components/HeroSearchBar';
 import { properties, agents, testimonials, newsArticles, features } from '../data/sampleData';
 import background from '../assets/background.jpg';
+import background2 from '../assets/background2.jpeg';
 import bgvid1 from '../assets/bgvid1.mp4';
 import { useTranslation } from 'react-i18next'; 
 
@@ -42,7 +43,7 @@ const Home = () => {
           playsInline
         /> */}
         <img
-          src={background}
+          src={background2}
           alt="Hero Background"
           className="absolute inset-0 w-full h-full object-cover opacity-80"
         />
@@ -57,10 +58,10 @@ const Home = () => {
                   transition={{ duration: 0.8 }}
                 >
                   <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-left">
-                    {t('Find Your Dream Home with REMAX Technologies')}
+                    {t('Find Your Dream Home with REMAX Agency')}
                   </h1>
-                  <p className="text-lg md:text-xl mb-8 text-gray-300 max-w-2xl">
-                    {t('hero.subtitle')}
+                  <p className="text-lg md:text-xl mb-8 text-primary-900 max-w-2xl">
+                    {t('Explore the best properties for sale and rent with ease and confidence.')}
                   </p>
                 </motion.div>
               </div>
