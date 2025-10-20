@@ -33,13 +33,18 @@ const Home = () => {
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <section className="relative min-h-[100vh] flex items-center justify-center overflow-hidden">
-        <video
+        {/* <video
           className="absolute inset-0 w-full h-full object-cover opacity-70"
           src={bgvid1}
           autoPlay
           loop
           muted
           playsInline
+        /> */}
+        <img
+          src={background}
+          alt="Hero Background"
+          className="absolute inset-0 w-full h-full object-cover opacity-80"
         />
         <div className="relative z-10 container mx-auto px-4 h-full">
           <div className="grid grid-cols-1 lg:grid-cols-3 h-full">

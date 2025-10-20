@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Phone, User, Search } from 'lucide-react';
-import logo from '../assets/logo.png';
+import logo from '../assets/logo22.jpeg';
 import logoDark from '../assets/logo-dark.svg';
 import { useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
