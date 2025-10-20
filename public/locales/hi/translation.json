@@ -1,0 +1,23 @@
+{
+  "nav": {
+    "home": "मुख्य पृष्ठ",
+    "buy": "खरीदें",
+    "sale": "बिक्री/रीसेल",
+    "rent": "किराया",
+    "propertyManagement": "संपत्ति प्रबंधन",
+    "propertyEvaluation": "संपत्ति मूल्यांकन",
+    "communities": "समुदाय",
+    "developers": "डेवलपर्स",
+    "featuredProjects": "विशेष परियोजनाएँ",
+    "more": "और",
+    "aboutUs": "हमारे बारे में",
+    "careers": "करियर",
+    "contactUs": "संपर्क करें"
+  },
+  "common": {
+    "submit": "जमा करें",
+    "search": "खोजें",
+    "readMore": "और पढ़ें",
+    "contactUs": "संपर्क करें"
+  }
+}

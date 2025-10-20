@@ -7,7 +7,9 @@ import { Globe } from 'lucide-react';
 const LANGUAGES = [
   { code: 'en', name: 'English', flag: '🇺🇸', dir: 'ltr' },
   { code: 'ar', name: 'العربية', flag: '🇦🇪', dir: 'rtl' },
-  { code: 'fr', name: 'Français', flag: '🇫🇷', dir: 'ltr' }
+  { code: 'fr', name: 'Français', flag: '🇫🇷', dir: 'ltr' },
+  { code: 'hi', name: 'हिन्दी', flag: '🇮🇳', dir: 'ltr' },
+  {  code: 'ru', name: 'Русский', flag: '🇷🇺', dir: 'ltr'  },
 ];
 
 const FloatingLanguageButton = ({ className = '' }) => {

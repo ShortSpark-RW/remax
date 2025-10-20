@@ -70,7 +70,7 @@ const Home = () => {
           </div>
 
           {/* Search Bar - fixed to bottom center of hero, with right padding on large to avoid contact form */}
-          <div className="absolute left-0 right-0 bottom-0 flex justify-center px-4 lg:px-24">
+          <div className="absolute left-0 right-0 bottom-07 flex justify-center px-4 lg:px-24">
             <div className="w-full max-w-7xl lg:pr-72">
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
