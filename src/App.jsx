@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import AIChatButton from './components/AIChatButton';
 import FloatingLanguageButton from './components/FloatingLanguageButton';
+import AuthModal from './components/AuthModal';
 import Home from './pages/Home';
 import ListLayout from './pages/ListLayout';
 import SingleProperty from './pages/SingleProperty';
@@ -25,6 +26,7 @@ function App() {
         <Footer />
         <AIChatButton />
         <FloatingLanguageButton />
+        <AuthModal />
       </div>
     </Router>
   );

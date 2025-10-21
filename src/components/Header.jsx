@@ -34,7 +34,7 @@ const Header = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className="bg-slate-800 text-white"
+      className="bg-white-800 text-black"
     >
       {/* Top Header Bar */}
       <div className="container mx-auto px-4 py-3">
@@ -60,7 +60,7 @@ const Header = () => {
                   className={`px-3 py-2 text-sm font-medium transition-colors duration-200 ${
                     isActive
                       ? 'bg-orange-500 text-white'
-                      : 'text-gray-300 hover:text-white hover:bg-gray-700'
+                      : 'text-black-300 hover:text-white hover:bg-gray-700'
                   }`}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
