@@ -5,7 +5,7 @@ import { X } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import signupImage from '../assets/background2.jpeg';
+import backgroundImage from '../assets/background2.jpeg';
 
 const SignupSchema = Yup.object().shape({
   name: Yup.string().required('Required'),
@@ -24,7 +24,7 @@ const AuthModal = () => {
   const [view, setView] = useState('intro'); // intro | signup | login
 
   useEffect(() => {
-    const timer = setTimeout(() => setOpen(true), 10000);
+    const timer = setTimeout(() => setOpen(true), 5000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -53,25 +53,30 @@ const AuthModal = () => {
         {view === 'intro' && (
           <div>
             <img
-              src={signupImage}
+              src={backgroundImage}
               alt="signup"
-              className="w-full h-40 object-cover"
+              className="w-full h-44 object-cover"
             />
             <div className="p-6 text-center">
-              <h3 className="text-2xl font-semibold mb-2">{t('Welcome to REMAX')}</h3>
-              <p className="text-gray-600 mb-6">{t('Join us to discover amazing properties')}</p>
+              <h3 className="text-2xl md:text-3xl font-semibold mb-2">{t('Welcome to REMAX')}</h3>
+              <p className="text-gray-700 mb-4 text-sm md:text-base">{t('Discover curated listings, get personalised recommendations, and save your favourites — join REMAX for a smarter property search.')}</p>
+              <ul className="text-left text-sm text-gray-600 mb-6 list-disc list-inside max-w-md mx-auto">
+                <li>{t('Access exclusive listings')}</li>
+                <li>{t('Receive alerts for new properties')}</li>
+                <li>{t('Save and compare your favourites')}</li>
+              </ul>
               <div className="flex items-center justify-center space-x-4">
                 <button
-                  className="px-6 py-2 bg-orange-500 text-white rounded-md"
+                  className="px-6 py-2 bg-orange-500 text-white rounded-md shadow"
                   onClick={() => setView('signup')}
                 >
-                  {t('Sign up')}
+                  {t('Create Account')}
                 </button>
                 <button
                   className="px-6 py-2 bg-white border border-gray-200 rounded-md"
                   onClick={() => setView('login')}
                 >
-                  {t('Login')}
+                  {t('Sign In')}
                 </button>
               </div>
             </div>
@@ -80,7 +85,8 @@ const AuthModal = () => {
 
         {view === 'signup' && (
           <div className="p-6">
-            <h3 className="text-xl font-semibold mb-4">{t('Create an account')}</h3>
+            <h3 className="text-xl font-semibold mb-2">{t('Create an account')}</h3>
+            <p className="text-sm text-gray-600 mb-4">{t('Create a free REMAX account to shortlist properties, contact agents, and get personalised alerts.')}</p>
             <Formik
               initialValues={{ name: '', email: '', password: '' }}
               validationSchema={SignupSchema}
@@ -108,12 +114,12 @@ const AuthModal = () => {
                     <Field name="password" type="password" className="w-full border rounded-md p-2 mt-1" />
                     <div className="text-red-500 text-sm"><ErrorMessage name="password" /></div>
                   </div>
-                  <div className="flex items-center justify-between">
-                    <button type="submit" disabled={isSubmitting} className="px-4 py-2 bg-orange-500 text-white rounded-md">
-                      {t('Sign up')}
+                  <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
+                    <button type="submit" disabled={isSubmitting} className="w-full sm:w-auto px-4 py-2 bg-orange-500 text-white rounded-md">
+                      {t('Create Account')}
                     </button>
                     <button type="button" className="text-sm text-gray-600 underline" onClick={() => setView('login')}>
-                      {t('Already have an account? Login')}
+                      {t('Already have an account? Sign In')}
                     </button>
                   </div>
                 </Form>
@@ -124,7 +130,8 @@ const AuthModal = () => {
 
         {view === 'login' && (
           <div className="p-6">
-            <h3 className="text-xl font-semibold mb-4">{t('Login to your account')}</h3>
+            <h3 className="text-xl font-semibold mb-2">{t('Welcome back')}</h3>
+            <p className="text-sm text-gray-600 mb-4">{t('Sign in to access your saved properties, messages with agents, and tailored recommendations.')}</p>
             <Formik
               initialValues={{ email: '', password: '' }}
               validationSchema={LoginSchema}
@@ -147,12 +154,12 @@ const AuthModal = () => {
                     <Field name="password" type="password" className="w-full border rounded-md p-2 mt-1" />
                     <div className="text-red-500 text-sm"><ErrorMessage name="password" /></div>
                   </div>
-                  <div className="flex items-center justify-between">
-                    <button type="submit" disabled={isSubmitting} className="px-4 py-2 bg-orange-500 text-white rounded-md">
-                      {t('Login')}
+                  <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
+                    <button type="submit" disabled={isSubmitting} className="w-full sm:w-auto px-4 py-2 bg-orange-500 text-white rounded-md">
+                      {t('Sign In')}
                     </button>
                     <button type="button" className="text-sm text-gray-600 underline" onClick={() => setView('signup')}>
-                      {t('Create an account')}
+                      {t('Create Account')}
                     </button>
                   </div>
                 </Form>
