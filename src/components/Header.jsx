@@ -93,7 +93,7 @@ const Header = () => {
                 >
                   <motion.a
                     href={item.href}
-                    className={`px-3 py-2 text-sm font-medium transition-colors duration-200 inline-flex items-center ${
+                    className={`px-3 py-2 text-sm font-medium font-sans transition-colors duration-200 inline-flex items-center ${
                       isActive || activeDropdown === item.hasDropdown
                         ? 'bg-orange-500 text-white'
                         : 'text-black-300 hover:text-white hover:bg-gray-700'

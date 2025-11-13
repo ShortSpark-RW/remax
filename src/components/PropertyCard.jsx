@@ -32,7 +32,7 @@ const PropertyCard = ({ property, index = 0 }) => {
       case 'sold':
         return 'bg-red-500';
       default:
-        return 'bg-teal-500';
+        return 'bg-orange-500';
     }
   };
 
@@ -43,7 +43,7 @@ const PropertyCard = ({ property, index = 0 }) => {
       case 'hot':
         return 'bg-red-500';
       case 'trendy':
-        return 'bg-teal-500';
+        return 'bg-orange-500';
       default:
         return 'bg-blue-500';
     }

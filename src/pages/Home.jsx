@@ -7,7 +7,7 @@ import AgentCard from '../components/AgentCard';
 import ContactForm from '../components/ContactForm';
 import HeroSearchBar from '../components/HeroSearchBar';
 import { properties, agents, testimonials, newsArticles, features } from '../data/sampleData';
-import background from '../assets/background.jpg';
+import background from '../assets/background-main.png';
 import background2 from '../assets/background2.jpeg';
 import background3 from '../assets/abuadhabi.png';
 import bgvid1 from '../assets/bgvid1.mp4';
@@ -44,36 +44,46 @@ const Home = () => {
           playsInline
         /> */}
         <img
-          src={background3}
+          src={background}
           alt="Hero Background"
           className="absolute inset-0 w-full h-full object-cover opacity-80"
         />
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black opacity-40"></div>
         <div className="relative z-10 container mx-auto px-4 h-full">
-          <div className="grid grid-cols-1 lg:grid-cols-3 h-full">
+          <div className="grid grid-cols-1 lg:grid-cols-5 h-full">
             {/* Left: Hero text (left-aligned on large) */}
-            <div className="lg:col-span-2 flex flex-col justify-center items-start text-white py-12">
+            <div className="lg:col-span-3 flex flex-col justify-center items-start text-white py-5">
               <div className="w-full lg:max-w-2xl">
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8 }}
                 >
-                  <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-left">
-                    {t('Find Your Dream Home with REMAX Agency')}
+                  <h1 className="text-4xl md:text-7xl font-extrabold mb-6 leading-[60px] text-left font-serif text-shadow-lg">
+                    {t('common.hero.title1')}
                   </h1>
-                  <p className="text-lg md:text-xl mb-8 text-primary-900 max-w-2xl">
-                    {t('Explore the best properties for sale and rent with ease and confidence.')}
+                  <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-[60px] text-left font-serif text-shadow-lg">
+                    {t('common.hero.title2')}
+                  </h1>
+                  <p className="text-lg md:text-3xl mb-8 text-white text-shadow-xl max-w-2xl">
+                    {t('common.hero.description')}
                   </p>
+                  <p className='text-xl md:text-4xl my-10 text-white text-shadow-xl max-w-3xl'>{t('common.hero.subtitle')}</p>
+                  <div className="flex space-x-4 justify-center">
+                    <motion.button className='bg-orange-600 px-6 py-3 rounded-lg'>{t('common.hero.button1')}</motion.button>
+                    <motion.button className='bg-gray-300/25 px-6 py-3 rounded-lg'><span className='text-white'>{t('common.hero.button2')}</span></motion.button>
+                  </div>
                 </motion.div>
               </div>
             </div>
 
             {/* Right: Contact form (sticky on large screens) */}
-            {/* <div className="hidden lg:flex lg:col-span-1 items-start justify-end">
-              <div className="w-full max-w-sm sticky top-8">
-                <ContactForm title="Let Us Call You!" />
+            <div className="hidden lg:flex lg:col-span-2 items-start justify-center py-10">
+              <div className="w-full max-w-lg sticky top-8">
+                <ContactForm title={t('common.hero.form')} />
               </div>
-            </div> */}
+            </div>
           </div>
 
           {/* Search Bar - fixed to bottom center of hero, with right padding on large to avoid contact form */}
@@ -125,7 +135,7 @@ const Home = () => {
                   onClick={() => setActiveTab(tab)}
                   className={`px-6 py-3 rounded-md font-medium transition-colors duration-200 ${
                     activeTab === tab
-                      ? 'bg-teal-600 text-white'
+                      ? 'bg-orange-600 text-white'
                       : 'text-gray-600 hover:text-teal-600'
                   }`}
                 >
@@ -155,7 +165,7 @@ const Home = () => {
                   key={page}
                   className={`w-10 h-10 font-medium transition-colors duration-200 ${
                     page === 1
-                      ? 'bg-teal-600 text-white'
+                      ? 'bg-orange-600 text-white'
                       : 'bg-gray-200 text-gray-600 hover:bg-gray-300'
                   }`}
                   whileHover={{ scale: 1.1 }}
@@ -367,7 +377,7 @@ const Home = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-teal-600 relative">
+      <section className="py-20 bg-orange-600 relative">
         {/* Diagonal separators */}
         {/* <div className="absolute top-0 left-0 w-full h-16 bg-gray-50 transform skew-y-1 origin-top-left"></div>
         <div className="absolute bottom-0 left-0 w-full h-16 bg-white transform -skew-y-1 origin-bottom-left"></div> */}
@@ -498,7 +508,7 @@ const Home = () => {
       </section>
 
       {/* Bottom Call to Action */}
-      <section className="py-20 bg-teal-600 relative overflow-hidden">
+      <section className="py-20 bg-orange-600 relative overflow-hidden">
         {/* Diagonal separators */}
         {/* <div className="absolute top-0 left-0 w-full h-16 bg-white transform -skew-y-1 origin-top-left"></div>
         <div className="absolute bottom-0 left-0 w-full h-16 bg-white transform skew-y-1 origin-bottom-left"></div> */}
@@ -542,7 +552,7 @@ const Home = () => {
       {/* Partners Section */}
       <section className="py-20 bg-white relative">
         {/* Diagonal separator */}
-        {/* <div className="absolute top-0 left-0 w-full h-16 bg-teal-600 transform -skew-y-1 origin-top-left"></div>
+        {/* <div className="absolute top-0 left-0 w-full h-16 bg-orange-600 transform -skew-y-1 origin-top-left"></div>
         <div className="absolute bottom-0 left-0 w-full h-16 bg-gray-800 transform skew-y-1 origin-bottom-left"></div> */}
         
         <div className="container mx-auto px-4 relative z-10">

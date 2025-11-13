@@ -2,9 +2,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Formik, Form, Field } from 'formik';
-import { contactFormSchema } from '../utils/validationSchemas';
+import { MapPin, Building, DollarSign, ChevronDown } from 'lucide-react';
 
-const ContactForm = ({ title = "Let Us Call You!", className = '' }) => {
+
+const ContactForm = ({ title = "Find the Property of your choice", className = '' }) => {
   const handleSubmit = (values, { setSubmitting, resetForm }) => {
     console.log('Contact form submitted:', values);
     setTimeout(() => {
@@ -16,92 +17,97 @@ const ContactForm = ({ title = "Let Us Call You!", className = '' }) => {
 
   return (
     <motion.div
-      className={`bg-white rounded-lg shadow-lg p-6 ${className}`}
+      className={`bg-white rounded-[22px] shadow-lg p-6 ${className}`}
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5 }}
     >
-      <h3 className="text-xl font-bold text-gray-900 mb-6">{title}</h3>
+      <h3 className="text-xl font-bold text-gray-900 text-center my-3 font-serif">{title}</h3>
       
       <Formik
         initialValues={{
-          name: '',
-          email: '',
-          phone: '',
-          agreeToTerms: false
+          location: '',
+          propertyType: '',
+          maxPrice: ''
         }}
-        validationSchema={contactFormSchema}
         onSubmit={handleSubmit}
       >
-        {({ isSubmitting, errors, touched }) => (
+        {({ isSubmitting }) => (
           <Form className="space-y-4">
-            {/* Name Field */}
+            {/* Location Field */}
             <div>
-              <Field
-                type="text"
-                name="name"
-                placeholder="Name"
-                className="input-field"
-              />
-              {errors.name && touched.name && (
-                <p className="text-red-500 text-sm mt-1">{errors.name}</p>
-              )}
+              <label className="block text-sm font-medium text-gray-700 mb-2">Location</label>
+              <div className="relative">
+                <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+                <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400 pointer-events-none" />
+                <Field
+                  as="select"
+                  name="location"
+                  className="w-full pl-10 pr-10 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 appearance-none bg-white"
+                >
+                <option value="">Al Reem Island, Shams Abu Dhabi</option>
+                <option value="al-reem-island">Al Reem Island</option>
+                <option value="shams-abu-dhabi">Shams Abu Dhabi</option>
+                <option value="saadiyat-island">Saadiyat Island</option>
+                <option value="yas-island">Yas Island</option>
+                <option value="al-raha-beach">Al Raha Beach</option>
+                <option value="masdar-city">Masdar City</option>
+                <option value="al-reef">Al Reef</option>
+                </Field>
+              </div>
             </div>
 
-            {/* Email Field */}
+            {/* Property Type Field */}
             <div>
-              <Field
-                type="email"
-                name="email"
-                placeholder="Email"
-                className="input-field"
-              />
-              {errors.email && touched.email && (
-                <p className="text-red-500 text-sm mt-1">{errors.email}</p>
-              )}
+              <label className="block text-sm font-medium text-gray-700 mb-2">Property type</label>
+              <div className="relative">
+                <Building className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+                <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400 pointer-events-none" />
+                <Field
+                  as="select"
+                  name="propertyType"
+                  className="w-full pl-10 pr-10 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 appearance-none bg-white"
+                >
+                <option value="">Apartment</option>
+                <option value="apartment">Apartment</option>
+                <option value="villa">Villa</option>
+                <option value="townhouse">Townhouse</option>
+                <option value="penthouse">Penthouse</option>
+                <option value="studio">Studio</option>
+                </Field>
+              </div>
             </div>
 
-            {/* Phone Field */}
+            {/* Max Price Field */}
             <div>
-              <Field
-                type="tel"
-                name="phone"
-                placeholder="Phone Number"
-                className="input-field"
-              />
-              {errors.phone && touched.phone && (
-                <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
-              )}
+              <label className="block text-sm font-medium text-gray-700 mb-2">Max Price</label>
+              <div className="relative">
+                <DollarSign className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+                <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400 pointer-events-none" />
+                <Field
+                  as="select"
+                  name="maxPrice"
+                  className="w-full pl-10 pr-10 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 appearance-none bg-white"
+                >
+                <option value="">AED 25,000,000</option>
+                <option value="1000000">AED 1,000,000</option>
+                <option value="5000000">AED 5,000,000</option>
+                <option value="10000000">AED 10,000,000</option>
+                <option value="25000000">AED 25,000,000</option>
+                <option value="50000000">AED 50,000,000</option>
+                </Field>
+              </div>
             </div>
-
-            {/* Terms Agreement */}
-            <div className="flex items-start space-x-2">
-              <Field
-                type="checkbox"
-                name="agreeToTerms"
-                id="agreeToTerms"
-                className="mt-1"
-              />
-              <label htmlFor="agreeToTerms" className="text-sm text-gray-600">
-                I agree to the{' '}
-                <a href="#" className="text-teal-600 hover:text-teal-700">
-                  terms & conditions
-                </a>
-              </label>
-            </div>
-            {errors.agreeToTerms && touched.agreeToTerms && (
-              <p className="text-red-500 text-sm">{errors.agreeToTerms}</p>
-            )}
 
             {/* Submit Button */}
             <motion.button
               type="submit"
               disabled={isSubmitting}
-              className="w-full btn-primary"
+              className="w-full bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              {isSubmitting ? 'Submitting...' : 'Submit'}
+              {isSubmitting ? 'Searching...' : 'Search'}
             </motion.button>
           </Form>
         )}

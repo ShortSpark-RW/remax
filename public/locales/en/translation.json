@@ -18,6 +18,15 @@
     "submit": "Submit",
     "search": "Search",
     "readMore": "Read More",
-    "contactUs": "Contact Us"
+    "contactUs": "Contact Us",
+    "hero": {
+      "title1": "Discover Luxury",
+      "title2": "Living in Abu Dhabi",
+      "subtitle": "Invest in comfort. Invest in the future.",
+      "description": "Find your dream home among the city’s most elegant apartments, waterfront residences, and skyline retreats.",
+      "form": "Find the Property of your choice",
+      "button1": "Sign Up",
+      "button2": "Learn More"
+    }
   }
 }

@@ -18,6 +18,15 @@
     "submit": "Soumettre",
     "search": "Rechercher",
     "readMore": "Lire la suite",
-    "contactUs": "Contactez-nous"
+    "contactUs": "Contactez-nous",
+    "hero": {
+      "title1": "Découvrez le luxe",
+      "title2": "Vivre à Abu Dhabi",
+      "subtitle": "Investissez dans le confort. Investissez dans l'avenir.",
+      "description": "Trouvez la maison de vos rêves parmi les appartements les plus élégants de la ville, les résidences en bord de mer et les refuges avec vue sur la skyline.",
+      "form": "Trouvez la propriété de votre choix",
+      "button1": "S'inscrire",
+      "button2": "En savoir plus"
+    }
   }
 }

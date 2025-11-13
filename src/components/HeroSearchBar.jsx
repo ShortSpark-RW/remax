@@ -175,7 +175,7 @@ const HeroSearchBar = ({ className = '' }) => {
               <motion.button
                 type="submit"
                 disabled={isSubmitting}
-                className="bg-teal-600 hover:bg-teal-700 text-white font-medium px-8 py-3 rounded-md flex items-center space-x-3 text-lg shadow-md"
+                className="bg-orange-600 hover:bg-orange-700 text-white font-medium px-8 py-3 rounded-md flex items-center space-x-3 text-lg shadow-md"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
