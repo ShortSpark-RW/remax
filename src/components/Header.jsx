@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Phone, User, Search } from 'lucide-react';
-import logo from '../assets/screen.png';
+import logo from '../assets/logo.webp';
 import logoDark from '../assets/logo-dark.svg';
 import { useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -50,12 +50,12 @@ const Header = () => {
     // { key: 'nav.rent', href: '/rent' },
     // { key: 'nav.propertyManagement', href: '/property-management' },
     // { key: 'nav.propertyEvaluation', href: '/property-evaluation' },
-    { key: 'nav.communities', href: '/properties', hasDropdown: 'communities' },
     { key: 'nav.developers', href: '/properties', hasDropdown: 'developers' },
     { key: 'nav.featuredProjects', href: '/properties' },
-    { key: 'nav.more', href: '/properties' },
+    { key: 'nav.communities', href: '/properties', hasDropdown: 'communities' },
+    // { key: 'nav.more', href: '/properties' },
     { key: 'nav.aboutUs', href: '/properties' },
-    { key: 'nav.careers', href: '/properties', hasDropdown: 'careers' },
+    // { key: 'nav.careers', href: '/properties', hasDropdown: 'careers' },
     { key: 'nav.contactUs', href: '/properties' }
   ];
 
@@ -156,20 +156,20 @@ const Header = () => {
 
           {/* Contact Info & Actions */}
           <div className="hidden md:flex items-center space-x-6">
-            <div className="flex items-center space-x-2">
+            {/* <div className="flex items-center space-x-2">
               <Phone className="h-4 w-4" />
               <span className="text-sm">1-800-555-1234</span>
-            </div>
+            </div> */}
             
             <motion.button
               className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 text-sm font-medium transition-colors duration-200"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Submit
+              Search
             </motion.button>
 
-            <User className="h-5 w-5 cursor-pointer hover:text-orange-500 transition-colors duration-200" />
+            {/* <User className="h-5 w-5 cursor-pointer hover:text-orange-500 transition-colors duration-200" /> */}
           </div>
 
           {/* Mobile Menu Button */}
@@ -254,13 +254,13 @@ const Header = () => {
                   </div>
                 );
               })}
-              <div className="flex items-center space-x-4 pt-2">
+              {/* <div className="flex items-center space-x-4 pt-2">
                 <div className="flex items-center space-x-2">
                   <Phone className="h-4 w-4" />
                   <span className="text-sm">1-800-555-1234</span>
                 </div>
                 <User className="h-5 w-5" />
-              </div>
+              </div> */}
             </div>
           </motion.nav>
         )}

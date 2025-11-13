@@ -9,6 +9,7 @@ import HeroSearchBar from '../components/HeroSearchBar';
 import { properties, agents, testimonials, newsArticles, features } from '../data/sampleData';
 import background from '../assets/background.jpg';
 import background2 from '../assets/background2.jpeg';
+import background3 from '../assets/abuadhabi.png';
 import bgvid1 from '../assets/bgvid1.mp4';
 import { useTranslation } from 'react-i18next'; 
 
@@ -43,7 +44,7 @@ const Home = () => {
           playsInline
         /> */}
         <img
-          src={background2}
+          src={background3}
           alt="Hero Background"
           className="absolute inset-0 w-full h-full object-cover opacity-80"
         />
@@ -68,15 +69,15 @@ const Home = () => {
             </div>
 
             {/* Right: Contact form (sticky on large screens) */}
-            <div className="hidden lg:flex lg:col-span-1 items-start justify-end">
+            {/* <div className="hidden lg:flex lg:col-span-1 items-start justify-end">
               <div className="w-full max-w-sm sticky top-8">
                 <ContactForm title="Let Us Call You!" />
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* Search Bar - fixed to bottom center of hero, with right padding on large to avoid contact form */}
-          <div className="absolute left-0 right-0 bottom-07 flex justify-center px-4 lg:px-24">
+          {/* <div className="absolute left-0 right-0 bottom-07 flex justify-center px-4 lg:px-24">
             <div className="w-full max-w-7xl lg:pr-72">
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
@@ -86,14 +87,14 @@ const Home = () => {
                 <HeroSearchBar />
               </motion.div>
             </div>
-          </div>
+          </div> */}
 
           {/* Mobile: contact form displayed under content (so it doesn't overlap search) */}
-          <div className="lg:hidden mt-6">
+          {/* <div className="lg:hidden mt-6">
             <div className="w-full max-w-sm mx-auto">
               <ContactForm title="Let Us Call You!" />
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
 
