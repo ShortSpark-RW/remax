@@ -2,7 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Mail, Facebook, Twitter, Linkedin, Instagram, Youtube } from 'lucide-react';
-import logo from '../assets/screen.png';
+import logo from '../assets/logo.webp';
 import { Formik, Form, Field } from 'formik';
 import { newsletterSchema } from '../utils/validationSchemas';
 
@@ -32,7 +32,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-slate-800 text-white">
+    <footer className="bg-black opacity-90 text-white">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Left Column - Logo and Quick Links */}

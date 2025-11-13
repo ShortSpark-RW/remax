@@ -162,11 +162,11 @@ const Header = () => {
             </div> */}
             
             <motion.button
-              className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 text-sm font-medium transition-colors duration-200"
+              className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 text-sm rounded-md font-medium transition-colors duration-200"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Search
+              Sign Up
             </motion.button>
 
             {/* <User className="h-5 w-5 cursor-pointer hover:text-orange-500 transition-colors duration-200" /> */}

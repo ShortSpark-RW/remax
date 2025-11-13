@@ -43,7 +43,7 @@ const ContactForm = ({ title = "Find the Property of your choice", className = '
                 <Field
                   as="select"
                   name="location"
-                  className="w-full pl-10 pr-10 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 appearance-none bg-white"
+                  className="w-full pl-10 pr-10 py-3 border border-gray-300 rounded-full focus:ring-2 focus:ring-orange-500 focus:border-orange-500 appearance-none bg-white"
                 >
                 <option value="">Al Reem Island, Shams Abu Dhabi</option>
                 <option value="al-reem-island">Al Reem Island</option>
@@ -66,7 +66,7 @@ const ContactForm = ({ title = "Find the Property of your choice", className = '
                 <Field
                   as="select"
                   name="propertyType"
-                  className="w-full pl-10 pr-10 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 appearance-none bg-white"
+                  className="w-full pl-10 pr-10 py-3 border border-gray-300 rounded-full focus:ring-2 focus:ring-orange-500 focus:border-orange-500 appearance-none bg-white"
                 >
                 <option value="">Apartment</option>
                 <option value="apartment">Apartment</option>
@@ -87,7 +87,7 @@ const ContactForm = ({ title = "Find the Property of your choice", className = '
                 <Field
                   as="select"
                   name="maxPrice"
-                  className="w-full pl-10 pr-10 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 appearance-none bg-white"
+                  className="w-full pl-10 pr-10 py-3 border border-gray-300 rounded-full focus:ring-2 focus:ring-orange-500 focus:border-orange-500 appearance-none bg-white"
                 >
                 <option value="">AED 25,000,000</option>
                 <option value="1000000">AED 1,000,000</option>
@@ -103,7 +103,7 @@ const ContactForm = ({ title = "Find the Property of your choice", className = '
             <motion.button
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200"
+              className="w-full bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-6 rounded-full transition-colors duration-200"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
