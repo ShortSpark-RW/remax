@@ -60,7 +60,7 @@ const Home = () => {
                     {t('common.hero.description')}
                   </p>
                   <p className='text-xl md:text-4xl my-10 text-white text-shadow-xl max-w-3xl'>{t('common.hero.subtitle')}</p>
-                  <div className="flex space-x-4 justify-center">
+                  <div className="flex space-x-4 justify-start">
                     <motion.button className='bg-orange-600 px-6 py-3 rounded-lg'>{t('common.hero.button1')}</motion.button>
                     <motion.button className='bg-gray-300/25 px-6 py-3 rounded-lg'><span className='text-white'>{t('common.hero.button2')}</span></motion.button>
                   </div>
