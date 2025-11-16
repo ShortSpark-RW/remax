@@ -112,7 +112,7 @@ const Testimonials = () => {
           className="text-center mb-12"
         >
           <p className="text-sm text-gray-500 mb-2">Testimonials</p>
-          <h2 className="text-4xl font-bold text-gray-900">Waht our clients are saying</h2>
+          <h2 className="text-4xl font-bold text-gray-900">What our clients are saying</h2>
         </motion.div>
 
         {/* Testimonials Grid */}

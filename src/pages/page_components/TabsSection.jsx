@@ -60,7 +60,7 @@ const TabsSection = () => {
         types: ['APT', 'VI', 'TH', 'PH']
       }
     ],
-    'Sharjh': [
+    'Sharjah': [
       {
         id: 9,
         name: 'Al Majaz',
