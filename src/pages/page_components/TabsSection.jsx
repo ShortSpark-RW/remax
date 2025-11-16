@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const TabsSection = () => {
   const [activeTab, setActiveTab] = useState('Abu dhabi');
 
-  const tabs = ['Abu dhabi', 'Dubai', 'Sharjh', 'Al Ain', 'Ras Al Khaimah'];
+  const tabs = ['Abu dhabi', 'Dubai', 'Sharjah', 'Al Ain', 'Ras Al Khaimah'];
 
   const locations = {
     'Abu dhabi': [
