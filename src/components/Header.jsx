@@ -67,12 +67,12 @@ const Header = () => {
   };
 
   const navItems = [
-    { key: 'nav.home', href: '/' },
-    // { key: 'nav.buy', href: '/buy' },
-    // { key: 'nav.sale', href: '/sale' },
-    // { key: 'nav.rent', href: '/rent' },
-    // { key: 'nav.propertyManagement', href: '/property-management' },
-    // { key: 'nav.propertyEvaluation', href: '/property-evaluation' },
+    { key: t('nav.home'), href: '/' },
+    // { key: t('nav.buy'), href: '/buy' },
+    // { key: t('nav.sale'), href: '/sale' },
+    // { key: t('nav.rent'), href: '/rent' },
+    // { key: t('nav.propertyManagement'), href: '/property-management' },
+    // { key: t('nav.propertyEvaluation'), href: '/property-evaluation' },
     { key: 'Properties', href: '/properties', hasDropdown: 'developers' },
     { key: 'Featured Projects', href: '/properties' },
     { key: 'Communities', href: '/properties', hasDropdown: 'communities' },
