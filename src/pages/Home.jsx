@@ -76,7 +76,7 @@ const Home = () => {
             </div>
 
             {/* Right: Contact form */}
-            <div className="xl:col-span-2 flex items-start justify-center">
+            <div className="xl:col-span-2 flex items-center justify-center">
               <div className="w-full max-w-lg">
                 <ContactForm title={t('common.hero.form')} />
               </div>

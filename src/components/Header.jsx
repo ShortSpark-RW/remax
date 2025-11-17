@@ -73,11 +73,11 @@ const Header = () => {
     // { key: t('nav.rent'), href: '/rent' },
     // { key: t('nav.propertyManagement'), href: '/property-management' },
     // { key: t('nav.propertyEvaluation'), href: '/property-evaluation' },
-    { key: 'Properties', href: '/properties', hasDropdown: 'developers' },
-    { key: 'Featured Projects', href: '/properties' },
-    { key: 'Communities', href: '/properties', hasDropdown: 'communities' },
-    { key: 'About Us', href: '/properties' },
-    { key: 'Contact Us', href: '/properties' }
+    { key: t('nav.developers'), href: '/developers', hasDropdown: 'developers' },
+    { key: t('nav.featuredProjects'), href: '/properties' },
+    { key: t('nav.communities'), href: '/properties', hasDropdown: 'communities' },
+    { key: t('nav.aboutUs'), href: '/properties' },
+    { key: t('nav.contactUs'), href: '/properties' }
   ];
 
   return (
