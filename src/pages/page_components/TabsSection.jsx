@@ -141,15 +141,15 @@ const TabsSection = () => {
   };
 
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4">
+    <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Tabs */}
-        <div className="flex justify-start border-b border-gray-200 mb-12 overflow-x-auto">
+        <div className="flex justify-start border-b border-gray-200 mb-8 sm:mb-12 overflow-x-auto scrollbar-hide">
           {tabs.map((tab) => (
             <motion.button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`px-6 py-4 font-medium text-lg whitespace-nowrap relative ${
+              className={`px-3 sm:px-4 lg:px-6 py-3 sm:py-4 font-medium text-sm sm:text-base lg:text-lg whitespace-nowrap relative flex-shrink-0 ${
                 activeTab === tab ? 'text-gray-900' : 'text-gray-500 hover:text-gray-700'
               }`}
               whileHover={{ scale: 1.02 }}
@@ -158,7 +158,7 @@ const TabsSection = () => {
               {tab}
               {activeTab === tab && (
                 <motion.div
-                  className="absolute bottom-0 left-0 right-0 h-1 bg-orange-500"
+                  className="absolute bottom-0 left-0 right-0 h-0.5 sm:h-1 bg-orange-500"
                   layoutId="activeTab"
                   transition={{ type: 'spring', stiffness: 500, damping: 30 }}
                 />
@@ -175,7 +175,7 @@ const TabsSection = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6"
           >
             {locations[activeTab].map((location, index) => (
               <motion.div
@@ -184,7 +184,7 @@ const TabsSection = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: index * 0.1, duration: 0.3 }}
                 whileHover={{ scale: 1.05, y: -10 }}
-                className="relative rounded-2xl overflow-hidden shadow-lg cursor-pointer group h-[400px]"
+                className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-lg cursor-pointer group h-64 sm:h-80 lg:h-96 xl:h-[400px]"
               >
                 {/* Image */}
                 <img
@@ -197,9 +197,9 @@ const TabsSection = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                 
                 {/* Content */}
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 lg:p-6 text-white">
                   <motion.h3
-                    className="text-2xl font-serif font-bold mb-3"
+                    className="text-lg sm:text-xl lg:text-2xl font-serif font-bold mb-2 sm:mb-3"
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 + 0.2 }}
@@ -208,7 +208,7 @@ const TabsSection = () => {
                   </motion.h3>
                   
                   <motion.div
-                    className="flex gap-2 flex-wrap"
+                    className="flex gap-1 sm:gap-2 flex-wrap"
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 + 0.3 }}
@@ -216,7 +216,7 @@ const TabsSection = () => {
                     {location.types.map((type, idx) => (
                       <span
                         key={idx}
-                        className="text-sm font-medium"
+                        className="text-xs sm:text-sm font-medium"
                       >
                         {type}{idx < location.types.length - 1 && ' | '}
                       </span>
@@ -226,7 +226,7 @@ const TabsSection = () => {
 
                 {/* Hover Effect Border */}
                 <motion.div
-                  className="absolute inset-0 border-4 border-orange-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"
+                  className="absolute inset-0 border-2 sm:border-4 border-orange-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl sm:rounded-2xl"
                 />
               </motion.div>
             ))}

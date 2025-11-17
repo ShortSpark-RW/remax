@@ -24,15 +24,7 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="relative min-h-[100vh] flex items-center justify-center overflow-hidden">
-        {/* <video
-          className="absolute inset-0 w-full h-full object-cover opacity-70"
-          src={bgvid1}
-          autoPlay
-          loop
-          muted
-          playsInline
-        /> */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <img
           src={background}
           alt="Hero Background"
@@ -40,61 +32,58 @@ const Home = () => {
         />
         {/* Overlay */}
         <div className="absolute inset-0 bg-black opacity-40"></div>
-        <div className="relative z-10 container mx-auto px-4 h-full">
-          <div className="grid grid-cols-1 lg:grid-cols-5 h-full">
-            {/* Left: Hero text (left-aligned on large) */}
-            <div className="lg:col-span-3 flex flex-col justify-center items-start text-white py-5">
-              <div className="w-full lg:max-w-2xl">
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 h-full">
+          <div className="grid grid-cols-1 xl:grid-cols-5 gap-8 lg:gap-12 h-full min-h-screen py-8 sm:py-12 lg:py-16">
+            {/* Left: Hero text */}
+            <div className="xl:col-span-3 flex flex-col justify-center items-start text-white">
+              <div className="w-full max-w-4xl">
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8 }}
+                  className="space-y-4 sm:space-y-6 lg:space-y-8"
                 >
-                  <h1 className="text-4xl md:text-7xl font-extrabold mb-6 leading-[60px] text-left font-serif text-shadow-lg">
+                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-tight text-left font-serif text-shadow-lg">
                     {t('common.hero.title1')}
                   </h1>
-                  <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-[60px] text-left font-serif text-shadow-lg">
+                  <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-tight text-left font-serif text-shadow-lg">
                     {t('common.hero.title2')}
                   </h1>
-                  <p className="text-lg md:text-3xl mb-8 text-white text-shadow-xl max-w-2xl">
+                  <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-white text-shadow-xl max-w-3xl">
                     {t('common.hero.description')}
                   </p>
-                  <p className='text-xl md:text-4xl my-10 text-white text-shadow-xl max-w-3xl'>{t('common.hero.subtitle')}</p>
-                  <div className="flex space-x-4 justify-start">
-                    <motion.button className='bg-orange-600 px-6 py-3 rounded-lg'>{t('common.hero.button1')}</motion.button>
-                    <motion.button className='bg-gray-300/25 px-6 py-3 rounded-lg'><span className='text-white'>{t('common.hero.button2')}</span></motion.button>
+                  <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-white text-shadow-xl max-w-4xl">
+                    {t('common.hero.subtitle')}
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                    <motion.button 
+                      className="bg-orange-600 hover:bg-orange-700 px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-sm sm:text-base font-medium transition-colors"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      {t('common.hero.button1')}
+                    </motion.button>
+                    <motion.button 
+                      className="bg-gray-300/25 hover:bg-gray-300/35 px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-sm sm:text-base font-medium transition-colors"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <span className="text-white">{t('common.hero.button2')}</span>
+                    </motion.button>
                   </div>
                 </motion.div>
               </div>
             </div>
 
-            {/* Right: Contact form (sticky on large screens) */}
-            <div className="hidden lg:flex lg:col-span-2 items-start justify-center py-10">
-              <div className="w-full max-w-lg sticky top-8">
+            {/* Right: Contact form */}
+            <div className="xl:col-span-2 flex items-start justify-center">
+              <div className="w-full max-w-lg">
                 <ContactForm title={t('common.hero.form')} />
               </div>
             </div>
           </div>
 
-          {/* Search Bar - fixed to bottom center of hero, with right padding on large to avoid contact form */}
-          {/* <div className="absolute left-0 right-0 bottom-07 flex justify-center px-4 lg:px-24">
-            <div className="w-full max-w-7xl lg:pr-72">
-              <motion.div
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-              >
-                <HeroSearchBar />
-              </motion.div>
-            </div>
-          </div> */}
 
-          {/* Mobile: contact form displayed under content (so it doesn't overlap search) */}
-          {/* <div className="lg:hidden mt-6">
-            <div className="w-full max-w-sm mx-auto">
-              <ContactForm title="Let Us Call You!" />
-            </div>
-          </div> */}
         </div>
       </section>
 

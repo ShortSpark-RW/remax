@@ -23,9 +23,9 @@ const Companies = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+    <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           {/* Left Column */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -33,19 +33,19 @@ const Companies = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-5xl font-bold text-gray-900 mb-8">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 sm:mb-8 leading-tight">
               1250+ Companies<br />trust by us
             </h2>
 
             {/* Avatars and Rating */}
-            <div className="flex items-center gap-4">
-              <div className="flex -space-x-3">
+            <div className="flex items-center gap-3 sm:gap-4">
+              <div className="flex -space-x-2 sm:-space-x-3">
                 {avatars.map((avatar, index) => (
                   <motion.img
                     key={index}
                     src={avatar}
                     alt={`User ${index + 1}`}
-                    className="w-12 h-12 rounded-full border-4 border-white shadow-lg"
+                    className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-3 sm:border-4 border-white shadow-lg"
                     initial={{ opacity: 0, scale: 0 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ delay: index * 0.1, duration: 0.3 }}
@@ -54,7 +54,7 @@ const Companies = () => {
                   />
                 ))}
               </div>
-              <div className="text-sm font-medium text-gray-900">
+              <div className="text-xs sm:text-sm font-medium text-gray-900">
                 <span className="underline">3k ratings</span> (4.7)
               </div>
             </div>
@@ -66,18 +66,18 @@ const Companies = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="space-y-6"
+            className="space-y-4 sm:space-y-6"
           >
-            <p className="text-lg text-gray-700 leading-relaxed">
+            <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
               Your leading realestate advocate, transforming houses into dreams.
               trust us ro expertly guide you home. 4000 apartments & home for
               sell,rent & mortgage.
             </p>
 
             {/* Buttons */}
-            <div className="flex flex-wrap items-center gap-4">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
               <motion.button
-                className="bg-black text-white px-8 py-3 rounded-full font-medium hover:bg-gray-800 transition-colors"
+                className="bg-black text-white px-6 sm:px-8 py-3 rounded-full font-medium hover:bg-gray-800 transition-colors text-sm sm:text-base"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -85,11 +85,11 @@ const Companies = () => {
               </motion.button>
               
               <motion.button
-                className="flex items-center gap-2 text-gray-900 font-medium hover:gap-4 transition-all"
+                className="flex items-center gap-2 text-gray-900 font-medium hover:gap-4 transition-all text-sm sm:text-base"
                 whileHover={{ x: 5 }}
               >
                 request a call back
-                <ArrowRight className="h-5 w-5" />
+                <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5" />
               </motion.button>
             </div>
           </motion.div>
@@ -101,9 +101,9 @@ const Companies = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
-          className="mt-16 pt-12 border-t border-gray-200"
+          className="mt-12 sm:mt-16 pt-8 sm:pt-12 border-t border-gray-200"
         >
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 items-center justify-items-center">
             {companies.map((company, index) => (
               <motion.div
                 key={company.name}
@@ -117,7 +117,7 @@ const Companies = () => {
                 <img
                   src={company.logo}
                   alt={company.name}
-                  className="h-12 object-contain"
+                  className="h-8 sm:h-10 lg:h-12 object-contain"
                 />
               </motion.div>
             ))}

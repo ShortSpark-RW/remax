@@ -13,10 +13,10 @@ const AgentCard = ({ agent, index }) => {
       transition={{ delay: index * 0.1, duration: 0.5 }}
       viewport={{ once: true }}
       whileHover={{ y: -10 }}
-      className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all"
+      className="bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all"
     >
       {/* Agent Image */}
-      <div className="relative h-100 bg-gray-100 overflow-hidden">
+      <div className="relative h-48 sm:h-64 lg:h-80 bg-gray-100 overflow-hidden">
         <motion.img
           src={agent.image}
           alt={agent.name}
@@ -27,30 +27,30 @@ const AgentCard = ({ agent, index }) => {
       </div>
 
       {/* Agent Info */}
-      <div className="p-5">
+      <div className="p-3 sm:p-4 lg:p-5">
         <div className="flex items-start justify-between">
-          <div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-1">{agent.name}</h3>
-            <p className="text-sm text-gray-500">{agent.title}</p>
+          <div className="flex-1 min-w-0">
+            <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-1 truncate">{agent.name}</h3>
+            <p className="text-xs sm:text-sm text-gray-500">{agent.title}</p>
           </div>
 
           {/* Social Icons */}
-          <div className="flex gap-2">
+          <div className="flex gap-1 sm:gap-2 ml-2">
             <motion.a
               href={agent.phone}
-              className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-900 hover:text-white hover:border-gray-900 transition-colors"
+              className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-900 hover:text-white hover:border-gray-900 transition-colors"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
-              <Phone className="h-4 w-4" />
+              <Phone className="h-3 w-3 sm:h-4 sm:w-4" />
             </motion.a>
             <motion.a
               href={agent.instagram}
-              className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-900 hover:text-white hover:border-gray-900 transition-colors"
+              className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-900 hover:text-white hover:border-gray-900 transition-colors"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
-              <Instagram className="h-4 w-4" />
+              <Instagram className="h-3 w-3 sm:h-4 sm:w-4" />
             </motion.a>
           </div>
         </div>
@@ -96,21 +96,21 @@ const Agents = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4">
+    <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="mb-12"
+          className="mb-8 sm:mb-12"
         >
-          <h2 className="text-4xl font-bold text-gray-900">Our Agents</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">Our Agents</h2>
         </motion.div>
 
         {/* Agents Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
           {agents.map((agent, index) => (
             <AgentCard key={agent.id} agent={agent} index={index} />
           ))}

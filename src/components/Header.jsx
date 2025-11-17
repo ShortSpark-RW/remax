@@ -88,20 +88,20 @@ const Header = () => {
       className="bg-white-800 text-black"
     >
       {/* Top Header Bar */}
-      <div className="container mx-auto px-4 py-3">
+      <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-3">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <motion.div 
-            className="flex items-center"
+            className="flex items-center flex-shrink-0"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.2 }}
           >
             {/* choose logo variant based on current page (home uses white logo on dark bg) */}
-            <img src={location.pathname === '/' ? logo : logo} alt="EMAX Technologies" className="h-16 w-auto" />
+            <img src={location.pathname === '/' ? logo : logo} alt="EMAX Technologies" className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto" />
           </motion.div>
 
           {/* Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-1 lg:space-x-2 xl:space-x-4">
             {navItems.map((item, index) => {
               const hasDropdown = item.hasDropdown && dropdownData[item.hasDropdown];
               const isActive = location.pathname === item.href || location.pathname.startsWith(item.href + '/');
@@ -114,10 +114,10 @@ const Header = () => {
                 >
                   <motion.a
                     href={item.href}
-                    className={`px-3 py-2 text-sm font-medium font-sans transition-colors duration-200 inline-flex items-center ${
+                    className={`px-2 lg:px-3 xl:px-4 py-2 text-xs md:text-sm lg:text-base font-medium font-sans transition-colors duration-200 inline-flex items-center rounded-md ${
                       isActive || activeDropdown === item.hasDropdown
                         ? 'bg-orange-500 text-white'
-                        : 'text-black-300 hover:text-white hover:bg-gray-700'
+                        : 'text-gray-700 hover:text-white hover:bg-gray-700'
                     }`}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
@@ -128,7 +128,7 @@ const Header = () => {
                     {item.key}
                     {hasDropdown && (
                       <svg
-                        className={`ml-1 h-4 w-4 transition-transform duration-200 ${
+                        className={`ml-1 h-3 w-3 lg:h-4 lg:w-4 transition-transform duration-200 ${
                           activeDropdown === item.hasDropdown ? 'rotate-180' : ''
                         }`}
                         fill="none"
@@ -147,9 +147,9 @@ const Header = () => {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 10 }}
                       transition={{ duration: 0.2 }}
-                      className="absolute left-0 top-full w-96 bg-white shadow-xl ring-1 ring-black ring-opacity-5 focus:outline-none z-50 rounded-lg overflow-hidden"
+                      className="absolute left-0 top-full w-72 lg:w-80 xl:w-96 bg-white shadow-xl ring-1 ring-black ring-opacity-5 focus:outline-none z-50 rounded-lg overflow-hidden"
                     >
-                      <div className="p-6 grid grid-cols-2 gap-6">
+                      <div className="p-3 lg:p-4 xl:p-6 grid grid-cols-1 sm:grid-cols-2 gap-3 lg:gap-4 xl:gap-6">
                         {dropdownData[item.hasDropdown].sections.map((section, sectionIdx) => (
                           <div key={section.title} className="space-y-3">
                             <h3 className="text-sm font-semibold text-orange-600 uppercase tracking-wide border-b border-orange-100 pb-2">
@@ -182,26 +182,19 @@ const Header = () => {
           </nav>
 
           {/* Contact Info & Actions */}
-          <div className="hidden md:flex items-center space-x-6">
-            {/* <div className="flex items-center space-x-2">
-              <Phone className="h-4 w-4" />
-              <span className="text-sm">1-800-555-1234</span>
-            </div> */}
-            
+          <div className="hidden sm:flex items-center space-x-2 md:space-x-3 lg:space-x-4">
             <motion.button
-              className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 text-sm rounded-md font-medium transition-colors duration-200"
+              className="bg-orange-500 hover:bg-orange-600 text-white px-3 md:px-4 lg:px-6 py-2 text-xs md:text-sm font-medium rounded-md transition-colors duration-200"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               Sign Up
             </motion.button>
-
-            {/* <User className="h-5 w-5 cursor-pointer hover:text-orange-500 transition-colors duration-200" /> */}
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden"
+            className="md:hidden flex items-center justify-center w-8 h-8"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             <div className="w-6 h-6 flex flex-col justify-center space-y-1">
@@ -218,19 +211,19 @@ const Header = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden mt-4 pb-4"
+            className="md:hidden mt-4 pb-4 border-t border-gray-200"
           >
-            <div className="flex flex-col space-y-2">
+            <div className="flex flex-col space-y-1 pt-4">
               {navItems.map((item, index) => {
                 const hasDropdown = item.hasDropdown && dropdownData[item.hasDropdown];
                 return (
                   <div key={item.key}>
                     <motion.button
                       onClick={() => hasDropdown && handleDropdownEnter(activeDropdown === item.hasDropdown ? null : item.hasDropdown)}
-                      className={`w-full px-3 py-2 text-sm font-medium transition-colors duration-200 flex justify-between items-center ${
+                      className={`w-full px-4 py-3 text-sm font-medium transition-colors duration-200 flex justify-between items-center rounded-md ${
                         activeDropdown === item.hasDropdown
                           ? 'bg-orange-500 text-white'
-                          : 'text-gray-300 hover:text-white hover:bg-gray-700'
+                          : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
                       }`}
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
@@ -257,7 +250,7 @@ const Header = () => {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="bg-gray-800 px-4"
+                        className="bg-gray-50 px-4 py-2 rounded-md mt-2"
                       >
                         {dropdownData[item.hasDropdown].sections.map((section, sectionIdx) => (
                           <div key={section.title} className="mb-4">

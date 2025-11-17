@@ -33,8 +33,8 @@ const Footer = () => {
 
   return (
     <footer className="bg-black opacity-90 text-white">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {/* Left Column - Logo and Quick Links */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -43,15 +43,11 @@ const Footer = () => {
             viewport={{ once: true }}
           >
             <div className="flex items-center mb-4">
-              <img src={logo} alt="EMAX Technologies" className="h-32 w-auto mr-3" />
-              {/* <div>
-                <h3 className="text-lg font-bold">REAL HOMES</h3>
-                <p className="text-sm text-gray-400">/ Simply #1 Real Estate Theme</p>
-              </div> */}
+              <img src={logo} alt="EMAX Technologies" className="h-24 sm:h-28 lg:h-32 w-auto mr-3" />
             </div>
             
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2">
+            <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Quick Links</h4>
+            <ul className="space-y-1 sm:space-y-2">
               {quickLinks.map((link, index) => (
                 <motion.li
                   key={link.name}
@@ -61,7 +57,7 @@ const Footer = () => {
                 >
                   <a 
                     href={link.href} 
-                    className="text-gray-300 hover:text-white transition-colors duration-200"
+                    className="text-sm sm:text-base text-gray-300 hover:text-white transition-colors duration-200"
                   >
                     {link.name}
                   </a>
@@ -77,21 +73,21 @@ const Footer = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
-            <div className="space-y-3">
+            <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Contact Us</h4>
+            <div className="space-y-2 sm:space-y-3">
               <div className="flex items-start space-x-3">
-                <MapPin className="h-5 w-5 text-teal-500 mt-0.5" />
-                <span className="text-gray-300">
+                <MapPin className="h-4 w-4 sm:h-5 sm:w-5 text-teal-500 mt-0.5 flex-shrink-0" />
+                <span className="text-sm sm:text-base text-gray-300">
                   3015 Grand Ave, Coconut Grove, Merrick Way, FL 12345
                 </span>
               </div>
               <div className="flex items-center space-x-3">
-                <Phone className="h-5 w-5 text-teal-500" />
-                <span className="text-gray-300">+123-456-789</span>
+                <Phone className="h-4 w-4 sm:h-5 sm:w-5 text-teal-500 flex-shrink-0" />
+                <span className="text-sm sm:text-base text-gray-300">+123-456-789</span>
               </div>
               <div className="flex items-center space-x-3">
-                <Mail className="h-5 w-5 text-teal-500" />
-                <span className="text-gray-300">sales@example.com</span>
+                <Mail className="h-4 w-4 sm:h-5 sm:w-5 text-teal-500 flex-shrink-0" />
+                <span className="text-sm sm:text-base text-gray-300">sales@example.com</span>
               </div>
             </div>
           </motion.div>
@@ -103,22 +99,22 @@ const Footer = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <h4 className="text-lg font-semibold mb-4">Remain Updated</h4>
+            <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Remain Updated</h4>
             
             {/* Social Media Icons */}
-            <div className="flex space-x-4 mb-6">
+            <div className="flex space-x-3 sm:space-x-4 mb-4 sm:mb-6">
               {socialLinks.map((social, index) => (
                 <motion.a
                   key={social.label}
                   href={social.href}
-                  className="p-2 bg-gray-700 hover:bg-orange-600 transition-colors duration-200"
+                  className="p-1.5 sm:p-2 bg-gray-700 hover:bg-orange-600 transition-colors duration-200 rounded-md"
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   whileTap={{ scale: 0.95 }}
                   initial={{ opacity: 0, scale: 0 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ delay: index * 0.1 }}
                 >
-                  <social.icon className="h-4 w-4" />
+                  <social.icon className="h-3 w-3 sm:h-4 sm:w-4" />
                 </motion.a>
               ))}
             </div>
@@ -136,7 +132,7 @@ const Footer = () => {
                       type="email"
                       name="email"
                       placeholder="Your email address"
-                      className="w-full px-3 py-2 bg-gray-700 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                      className="w-full px-3 py-2 sm:py-3 bg-gray-700 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent rounded-md text-sm sm:text-base"
                     />
                     {errors.email && touched.email && (
                       <p className="text-red-400 text-sm mt-1">{errors.email}</p>
@@ -145,7 +141,7 @@ const Footer = () => {
                   <motion.button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-orange-500 hover:bg-orange-600 text-white font-medium py-2 px-4 transition-colors duration-200 disabled:opacity-50"
+                    className="w-full bg-orange-500 hover:bg-orange-600 text-white font-medium py-2 sm:py-3 px-4 transition-colors duration-200 disabled:opacity-50 rounded-md text-sm sm:text-base"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
@@ -163,10 +159,10 @@ const Footer = () => {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.6 }}
           viewport={{ once: true }}
-          className="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center"
+          className="border-t border-gray-700 mt-6 sm:mt-8 pt-6 sm:pt-8 flex flex-col sm:flex-row justify-between items-center space-y-2 sm:space-y-0"
         >
-          <p className="text-gray-400 text-sm">© 2025. All rights reserved.</p>
-          <p className="text-gray-400 text-sm">Designed by SHORTSPARK Ltd.</p>
+          <p className="text-gray-400 text-xs sm:text-sm">© 2025. All rights reserved.</p>
+          <p className="text-gray-400 text-xs sm:text-sm">Designed by SHORTSPARK Ltd.</p>
         </motion.div>
       </div>
     </footer>
