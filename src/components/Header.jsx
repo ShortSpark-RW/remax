@@ -14,24 +14,48 @@ const Header = () => {
   const location = useLocation();
 
   const dropdownData = {
-    communities: [
-      { title: t('Downtown'), href: '/communities/downtown', description: t('Luxury urban living in the heart of the city') },
-      { title: t('Beachfront'), href: '/communities/beachfront', description: t('Exclusive waterfront properties and developments') },
-      { title: t('Suburban'), href: '/communities/suburban', description: t('Family-friendly neighborhoods with great schools') },
-      { title: t('Golf Estates'), href: '/communities/golf-estates', description: t('Premium properties near world-class golf courses') }
-    ],
-    developers: [
-      { title: t('Featured Developers'), href: '/developers/featured', description: t('Top-rated property developers in our network') },
-      { title: t('Upcoming Projects'), href: '/developers/upcoming', description: t('Pre-launch and under-construction properties') },
-      { title: t('Luxury Developers'), href: '/developers/luxury', description: t('Premium developments and exclusive properties') },
-      { title: t('Green Builders'), href: '/developers/green', description: t('Sustainable and eco-friendly developments') }
-    ],
-    careers: [
-      { title: t('Real Estate Agents'), href: '/careers/agents', description: t('Join our team of professional agents') },
-      { title: t('Corporate Positions'), href: '/careers/corporate', description: t('Opportunities in management and operations') },
-      { title: t('Internships'), href: '/careers/internships', description: t('Start your career in real estate') },
-      { title: t('Training Programs'), href: '/careers/training', description: t('Professional development and certifications') }
-    ]
+    communities: {
+      sections: [
+        {
+          title: t('Abu Dhabi'),
+          items: [
+            { title: t('Al Reem Island'), href: '/communities/al-reem-island' },
+            { title: t('Yas Island'), href: '/communities/yas-island' },
+            { title: t('Saadiyat Island'), href: '/communities/saadiyat-island' },
+            { title: t('Al Raha Beach'), href: '/communities/al-raha-beach' },
+            { title: t('View More'), href: '/communities/abu-dhabi-view-more' }
+          ]
+        },
+        {
+          title: t('Dubai'),
+          items: [
+            { title: t('Dubai Marina'), href: '/communities/dubai-marina' },
+            { title: t('Downtown Dubai'), href: '/communities/downtown-dubai' },
+            { title: t('Palm Jumeirah'), href: '/communities/palm-jumeirah' },
+            { title: t('Business Bay'), href: '/communities/business-bay' },
+            { title: t('View More'), href: '/communities/dubai-view-more' }
+          ]
+        }
+      ]
+    },
+    developers: {
+      sections: [
+        {
+          title: t('Construction Partners'),
+          items: [
+            { title: t('Featured Developers'), href: '/developers/featured', description: t('Top-rated property developers in our network') },
+            { title: t('Green Builders'), href: '/developers/green', description: t('Sustainable and eco-friendly developments') }
+          ]
+        },
+        {
+          title: t('Luxury Development'),
+          items: [
+            { title: t('Luxury Developers'), href: '/developers/luxury', description: t('Premium developments and exclusive properties') },
+            { title: t('Upcoming Projects'), href: '/developers/upcoming', description: t('Pre-launch and under-construction properties') }
+          ]
+        }
+      ]
+    }
   };
 
   const handleDropdownEnter = (key) => {
@@ -49,13 +73,11 @@ const Header = () => {
     // { key: 'nav.rent', href: '/rent' },
     // { key: 'nav.propertyManagement', href: '/property-management' },
     // { key: 'nav.propertyEvaluation', href: '/property-evaluation' },
-    { key: 'nav.developers', href: '/properties', hasDropdown: 'developers' },
-    { key: 'nav.featuredProjects', href: '/properties' },
-    { key: 'nav.communities', href: '/properties', hasDropdown: 'communities' },
-    // { key: 'nav.more', href: '/properties' },
-    { key: 'nav.aboutUs', href: '/properties' },
-    // { key: 'nav.careers', href: '/properties', hasDropdown: 'careers' },
-    { key: 'nav.contactUs', href: '/properties' }
+    { key: 'Properties', href: '/properties', hasDropdown: 'developers' },
+    { key: 'Featured Projects', href: '/properties' },
+    { key: 'Communities', href: '/properties', hasDropdown: 'communities' },
+    { key: 'About Us', href: '/properties' },
+    { key: 'Contact Us', href: '/properties' }
   ];
 
   return (
@@ -103,7 +125,7 @@ const Header = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
                   >
-                    {t(item.key)}
+                    {item.key}
                     {hasDropdown && (
                       <svg
                         className={`ml-1 h-4 w-4 transition-transform duration-200 ${
@@ -125,25 +147,31 @@ const Header = () => {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 10 }}
                       transition={{ duration: 0.2 }}
-                      className="absolute left-0 top-full w-80 bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-50"
+                      className="absolute left-0 top-full w-96 bg-white shadow-xl ring-1 ring-black ring-opacity-5 focus:outline-none z-50 rounded-lg overflow-hidden"
                     >
-                      <div className="p-4 grid gap-4">
-                        {dropdownData[item.hasDropdown].map((dropdownItem, idx) => (
-                          <motion.a
-                            key={dropdownItem.href}
-                            href={dropdownItem.href}
-                            className="group flex flex-col p-4 hover:bg-gray-50 transition-colors duration-200"
-                            initial={{ opacity: 0, x: -20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: idx * 0.1 }}
-                          >
-                            <span className="font-medium text-gray-900 group-hover:text-orange-500">
-                              {dropdownItem.title}
-                            </span>
-                            <span className="mt-1 text-sm text-gray-500">
-                              {dropdownItem.description}
-                            </span>
-                          </motion.a>
+                      <div className="p-6 grid grid-cols-2 gap-6">
+                        {dropdownData[item.hasDropdown].sections.map((section, sectionIdx) => (
+                          <div key={section.title} className="space-y-3">
+                            <h3 className="text-sm font-semibold text-orange-600 uppercase tracking-wide border-b border-orange-100 pb-2">
+                              {section.title}
+                            </h3>
+                            <div className="space-y-2">
+                              {section.items.map((dropdownItem, idx) => (
+                                <motion.a
+                                  key={dropdownItem.href}
+                                  href={dropdownItem.href}
+                                  className="group flex flex-col p-3 hover:bg-gradient-to-r hover:from-orange-50 hover:to-teal-50 rounded-md transition-all duration-200"
+                                  initial={{ opacity: 0, x: -20 }}
+                                  animate={{ opacity: 1, x: 0 }}
+                                  transition={{ delay: (sectionIdx * 2 + idx) * 0.1 }}
+                                >
+                                  <span className="font-medium text-gray-900 group-hover:text-orange-600 text-sm">
+                                    {dropdownItem.title}
+                                  </span>
+                                </motion.a>
+                              ))}
+                            </div>
+                          </div>
                         ))}
                       </div>
                     </motion.div>
@@ -208,7 +236,7 @@ const Header = () => {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.1 }}
                     >
-                      {t(item.key)}
+                      {item.key}
                       {hasDropdown && (
                         <svg
                           className={`ml-1 h-4 w-4 transition-transform duration-200 ${
@@ -231,22 +259,26 @@ const Header = () => {
                         exit={{ opacity: 0, height: 0 }}
                         className="bg-gray-800 px-4"
                       >
-                        {dropdownData[item.hasDropdown].map((dropdownItem, idx) => (
-                          <motion.a
-                            key={dropdownItem.href}
-                            href={dropdownItem.href}
-                            className="block py-3 border-b border-gray-700 last:border-0"
-                            initial={{ opacity: 0, x: -20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: idx * 0.1 }}
-                          >
-                            <span className="block font-medium text-white">
-                              {dropdownItem.title}
-                            </span>
-                            <span className="mt-1 text-sm text-gray-400">
-                              {dropdownItem.description}
-                            </span>
-                          </motion.a>
+                        {dropdownData[item.hasDropdown].sections.map((section, sectionIdx) => (
+                          <div key={section.title} className="mb-4">
+                            <h4 className="text-xs font-semibold text-orange-400 uppercase tracking-wide mb-2">
+                              {section.title}
+                            </h4>
+                            {section.items.map((dropdownItem, idx) => (
+                              <motion.a
+                                key={dropdownItem.href}
+                                href={dropdownItem.href}
+                                className="block py-3 border-b border-gray-700 last:border-0"
+                                initial={{ opacity: 0, x: -20 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: (sectionIdx * 2 + idx) * 0.1 }}
+                              >
+                                <span className="block font-medium text-white">
+                                  {dropdownItem.title}
+                                </span>
+                              </motion.a>
+                            ))}
+                          </div>
                         ))}
                       </motion.div>
                     )}
