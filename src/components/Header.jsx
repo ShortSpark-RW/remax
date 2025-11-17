@@ -2,8 +2,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Phone, User, Search } from 'lucide-react';
-import logo from '../assets/logo.webp';
-import logoDark from '../assets/logo-dark.svg';
+import logo from '../assets/logo_black.png';
 import { useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from './LanguageSwitcher';
@@ -126,7 +125,7 @@ const Header = () => {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 10 }}
                       transition={{ duration: 0.2 }}
-                      className="absolute left-0 mt-2 w-80 bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-50"
+                      className="absolute left-0 top-full w-80 bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-50"
                     >
                       <div className="p-4 grid gap-4">
                         {dropdownData[item.hasDropdown].map((dropdownItem, idx) => (

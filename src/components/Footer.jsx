@@ -2,7 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Mail, Facebook, Twitter, Linkedin, Instagram, Youtube } from 'lucide-react';
-import logo from '../assets/logo.webp';
+import logo from '../assets/logo_white.png';
 import { Formik, Form, Field } from 'formik';
 import { newsletterSchema } from '../utils/validationSchemas';
 
