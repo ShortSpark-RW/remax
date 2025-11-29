@@ -58,8 +58,8 @@ const AuthModal = () => {
               className="w-full h-44 object-cover"
             />
             <div className="p-6 text-center">
-              <h3 className="text-2xl md:text-3xl font-semibold mb-2">{t('Welcome to REMAX')}</h3>
-              <p className="text-gray-700 mb-4 text-sm md:text-base">{t('Discover curated listings, get personalised recommendations, and save your favourites — join REMAX for a smarter property search.')}</p>
+              <h3 className="text-2xl md:text-3xl font-semibold mb-2">{t('Welcome to HD')}</h3>
+              <p className="text-gray-700 mb-4 text-sm md:text-base">{t('Discover curated listings, get personalised recommendations, and save your favourites — join HD for a smarter property search.')}</p>
               <ul className="text-left text-sm text-gray-600 mb-6 list-disc list-inside max-w-md mx-auto">
                 <li>{t('Access exclusive listings')}</li>
                 <li>{t('Receive alerts for new properties')}</li>
@@ -67,7 +67,7 @@ const AuthModal = () => {
               </ul>
               <div className="flex items-center justify-center space-x-4">
                 <button
-                  className="px-6 py-2 bg-orange-500 text-white rounded-md shadow"
+                  className="px-6 py-2 bg-hot-deal-maroon-800 text-white rounded-md shadow"
                   onClick={() => setView('signup')}
                 >
                   {t('Create Account')}
@@ -86,7 +86,7 @@ const AuthModal = () => {
         {view === 'signup' && (
           <div className="p-6">
             <h3 className="text-xl font-semibold mb-2">{t('Create an account')}</h3>
-            <p className="text-sm text-gray-600 mb-4">{t('Create a free REMAX account to shortlist properties, contact agents, and get personalised alerts.')}</p>
+            <p className="text-sm text-gray-600 mb-4">{t('Create a free HD account to shortlist properties, contact agents, and get personalised alerts.')}</p>
             <Formik
               initialValues={{ name: '', email: '', password: '' }}
               validationSchema={SignupSchema}
@@ -115,7 +115,7 @@ const AuthModal = () => {
                     <div className="text-red-500 text-sm"><ErrorMessage name="password" /></div>
                   </div>
                   <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
-                    <button type="submit" disabled={isSubmitting} className="w-full sm:w-auto px-4 py-2 bg-orange-500 text-white rounded-md">
+                    <button type="submit" disabled={isSubmitting} className="w-full sm:w-auto px-4 py-2 bg-hot-deal-maroon-800 text-white rounded-md">
                       {t('Create Account')}
                     </button>
                     <button type="button" className="text-sm text-gray-600 underline" onClick={() => setView('login')}>
@@ -155,7 +155,7 @@ const AuthModal = () => {
                     <div className="text-red-500 text-sm"><ErrorMessage name="password" /></div>
                   </div>
                   <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
-                    <button type="submit" disabled={isSubmitting} className="w-full sm:w-auto px-4 py-2 bg-orange-500 text-white rounded-md">
+                    <button type="submit" disabled={isSubmitting} className="w-full sm:w-auto px-4 py-2 bg-hot-deal-maroon-800 text-white rounded-md">
                       {t('Sign In')}
                     </button>
                     <button type="button" className="text-sm text-gray-600 underline" onClick={() => setView('signup')}>

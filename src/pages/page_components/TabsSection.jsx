@@ -158,7 +158,7 @@ const TabsSection = () => {
               {tab}
               {activeTab === tab && (
                 <motion.div
-                  className="absolute bottom-0 left-0 right-0 h-0.5 sm:h-1 bg-orange-500"
+                  className="absolute bottom-0 left-0 right-0 h-0.5 sm:h-1 bg-hot-deal-maroon-800"
                   layoutId="activeTab"
                   transition={{ type: 'spring', stiffness: 500, damping: 30 }}
                 />
@@ -226,7 +226,7 @@ const TabsSection = () => {
 
                 {/* Hover Effect Border */}
                 <motion.div
-                  className="absolute inset-0 border-2 sm:border-4 border-orange-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl sm:rounded-2xl"
+                  className="absolute inset-0 border-2 sm:border-4 border-hot-deal-maroon-800 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl sm:rounded-2xl"
                 />
               </motion.div>
             ))}

@@ -1,0 +1,514 @@
+/* eslint-disable no-unused-vars */
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Check, ChevronLeft, ChevronRight } from 'lucide-react';
+
+const MortgageCalculator = () => {
+  const [step, setStep] = useState(0);
+  const [formData, setFormData] = useState({
+    lookingFor: '',
+    bank: '',
+    propertyValue: '',
+    loanAmount: '',
+    yearsRemaining: '',
+    monthlyInstallment: '',
+    fullName: '',
+    email: '',
+    phone: '',
+    hasPassport: '',
+    isResident: ''
+  });
+
+  const progress = ((step + 1) / 8) * 100;
+
+  const handleNext = () => {
+    if (step < 7) setStep(step + 1);
+  };
+
+  const handleBack = () => {
+    if (step > 0) setStep(step - 1);
+  };
+
+  const handleChange = (field, value) => {
+    setFormData({ ...formData, [field]: value });
+  };
+
+  const banks = [
+    'Dubai Islamic Bank',
+    'Emirates NBD',
+    'Abu Dhabi Commercial Bank',
+    'First Abu Dhabi Bank',
+    'Mashreq Bank'
+  ];
+
+  const years = Array.from({ length: 25 }, (_, i) => i + 1);
+
+  return (
+    <div className="min-h-screen bg-gray-50 py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto">
+        {/* Progress Bar */}
+        {step < 7 && (
+          <div className="mb-8">
+            <div className="flex justify-between items-center mb-2">
+              <span className="text-sm font-medium text-gray-700">
+                {Math.round(progress)}% Completed
+              </span>
+            </div>
+            <div className="w-full bg-gray-200 rounded-full h-2">
+              <motion.div
+                className="bg-red-500 h-2 rounded-full"
+                initial={{ width: 0 }}
+                animate={{ width: `${progress}%` }}
+                transition={{ duration: 0.3 }}
+              />
+            </div>
+          </div>
+        )}
+
+        <AnimatePresence mode="wait">
+          {/* Step 0: Looking For */}
+          {step === 0 && (
+            <motion.div
+              key="step0"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -50 }}
+              className="bg-white rounded-lg p-6 sm:p-8 shadow-lg"
+            >
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8">
+                What are you looking for?
+              </h2>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                <button
+                  onClick={() => handleChange('lookingFor', 'new')}
+                  className={`p-6 border-2 rounded-lg text-left transition-all ${
+                    formData.lookingFor === 'new'
+                      ? 'border-green-500 bg-green-50'
+                      : 'border-gray-200 hover:border-gray-300'
+                  }`}
+                >
+                  <div className="flex items-center justify-between">
+                    <span className="text-lg font-medium">New Purchase</span>
+                    {formData.lookingFor === 'new' && (
+                      <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                        <Check className="w-4 h-4 text-white" />
+                      </div>
+                    )}
+                  </div>
+                </button>
+
+                <button
+                  onClick={() => handleChange('lookingFor', 'refinance')}
+                  className={`p-6 border-2 rounded-lg text-left transition-all ${
+                    formData.lookingFor === 'refinance'
+                      ? 'border-green-500 bg-green-50'
+                      : 'border-gray-200 hover:border-gray-300'
+                  }`}
+                >
+                  <div className="flex items-center justify-between">
+                    <span className="text-lg font-medium">Mortgage Refinances</span>
+                    {formData.lookingFor === 'refinance' && (
+                      <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                        <Check className="w-4 h-4 text-white" />
+                      </div>
+                    )}
+                  </div>
+                </button>
+              </div>
+
+              <button
+                onClick={handleNext}
+                disabled={!formData.lookingFor}
+                className="bg-black text-white px-8 py-3 rounded-md hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                Next ›
+              </button>
+            </motion.div>
+          )}
+
+          {/* Step 1: Bank Selection */}
+          {step === 1 && (
+            <motion.div
+              key="step1"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -50 }}
+              className="bg-white rounded-lg p-6 sm:p-8 shadow-lg"
+            >
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
+                Perfect! Let's get some more information about you existing mortgage
+              </h2>
+
+              <div className="mt-8 mb-8">
+                <label className="block text-sm font-medium text-gray-900 mb-2">
+                  Which bank is your mortgage with?
+                </label>
+                <select
+                  value={formData.bank}
+                  onChange={(e) => handleChange('bank', e.target.value)}
+                  className="w-full max-w-md px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                >
+                  <option value="">Dubai Islamic Bank</option>
+                  {banks.map((bank) => (
+                    <option key={bank} value={bank}>
+                      {bank}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <div className="flex gap-4">
+                <button
+                  onClick={handleBack}
+                  className="px-6 py-3 border-2 border-gray-300 rounded-md hover:bg-gray-50"
+                >
+                  ‹ Back
+                </button>
+                <button
+                  onClick={handleNext}
+                  className="bg-black text-white px-8 py-3 rounded-md hover:bg-gray-800"
+                >
+                  Next ›
+                </button>
+              </div>
+            </motion.div>
+          )}
+
+          {/* Step 2: Property Details */}
+          {step === 2 && (
+            <motion.div
+              key="step2"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -50 }}
+              className="bg-white rounded-lg p-6 sm:p-8 shadow-lg"
+            >
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8">
+                Alright, let's get a few details about your property?
+              </h2>
+
+              <div className="space-y-6 mb-8">
+                <div>
+                  <label className="block text-sm font-medium text-gray-900 mb-2">
+                    Property value
+                  </label>
+                  <div className="relative max-w-md">
+                    <input
+                      type="text"
+                      value={formData.propertyValue}
+                      onChange={(e) => handleChange('propertyValue', e.target.value)}
+                      className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                      placeholder="40,000"
+                    />
+                    <span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500">
+                      AED
+                    </span>
+                  </div>
+                  <p className="text-xs text-gray-600 mt-1">
+                    Not sure what the amount is? Give us an approximate figure.
+                  </p>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-900 mb-2">
+                    Outstanding loan amount
+                  </label>
+                  <div className="relative max-w-md">
+                    <input
+                      type="text"
+                      value={formData.loanAmount}
+                      onChange={(e) => handleChange('loanAmount', e.target.value)}
+                      className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                      placeholder="2,000"
+                    />
+                    <span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500">
+                      AED
+                    </span>
+                  </div>
+                  <p className="text-xs text-gray-600 mt-1">
+                    Not sure what the amount is? Give us an approximate figure.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-4">
+                <button
+                  onClick={handleBack}
+                  className="px-6 py-3 border-2 border-gray-300 rounded-md hover:bg-gray-50"
+                >
+                  ‹ Back
+                </button>
+                <button
+                  onClick={handleNext}
+                  className="bg-black text-white px-8 py-3 rounded-md hover:bg-gray-800"
+                >
+                  Next ›
+                </button>
+              </div>
+            </motion.div>
+          )}
+
+          {/* Step 3: Mortgage Term */}
+          {step === 3 && (
+            <motion.div
+              key="step3"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -50 }}
+              className="bg-white rounded-lg p-6 sm:p-8 shadow-lg"
+            >
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8">
+                What's the remaining mortgage term?
+              </h2>
+
+              <div className="mb-8">
+                <label className="block text-sm font-medium text-gray-900 mb-2">
+                  Number of years remaining?
+                </label>
+                <select
+                  value={formData.yearsRemaining}
+                  onChange={(e) => handleChange('yearsRemaining', e.target.value)}
+                  className="w-full max-w-md px-4 py-3 bg-gray-100 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                >
+                  <option value="">Select year</option>
+                  {years.map((year) => (
+                    <option key={year} value={year}>
+                      {year} {year === 1 ? 'year' : 'years'}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <div className="flex gap-4">
+                <button
+                  onClick={handleBack}
+                  className="px-6 py-3 border-2 border-gray-300 rounded-md hover:bg-gray-50"
+                >
+                  ‹ Back
+                </button>
+                <button
+                  onClick={handleNext}
+                  className="bg-black text-white px-8 py-3 rounded-md hover:bg-gray-800"
+                >
+                  Next ›
+                </button>
+              </div>
+            </motion.div>
+          )}
+
+          {/* Step 4: Monthly Installment */}
+          {step === 4 && (
+            <motion.div
+              key="step4"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -50 }}
+              className="bg-white rounded-lg p-6 sm:p-8 shadow-lg"
+            >
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8">
+                What's your current mortgage monthly installment?
+              </h2>
+
+              <div className="mb-8">
+                <label className="block text-sm font-medium text-gray-900 mb-2">
+                  Monthly installment amount?
+                </label>
+                <div className="relative max-w-md">
+                  <input
+                    type="text"
+                    value={formData.monthlyInstallment}
+                    onChange={(e) => handleChange('monthlyInstallment', e.target.value)}
+                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                    placeholder="4,000"
+                  />
+                  <span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500">
+                    AED
+                  </span>
+                </div>
+                <p className="text-xs text-gray-600 mt-1">
+                  Not sure what the amount is? Give us an approximate figure.
+                </p>
+              </div>
+
+              <div className="flex gap-4">
+                <button
+                  onClick={handleBack}
+                  className="px-6 py-3 border-2 border-gray-300 rounded-md hover:bg-gray-50"
+                >
+                  ‹ Back
+                </button>
+                <button
+                  onClick={handleNext}
+                  className="bg-black text-white px-8 py-3 rounded-md hover:bg-gray-800"
+                >
+                  Next ›
+                </button>
+              </div>
+            </motion.div>
+          )}
+
+          {/* Step 5: Personal Details */}
+          {step === 5 && (
+            <motion.div
+              key="step5"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -50 }}
+              className="bg-white rounded-lg p-6 sm:p-8 shadow-lg"
+            >
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8">
+                Let's get some details to help serve you better!
+              </h2>
+
+              <div className="space-y-6 mb-8">
+                <div>
+                  <label className="block text-sm font-medium text-gray-900 mb-2">
+                    Your full name
+                  </label>
+                  <input
+                    type="text"
+                    value={formData.fullName}
+                    onChange={(e) => handleChange('fullName', e.target.value)}
+                    className="w-full max-w-md px-4 py-3 bg-gray-100 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                    placeholder="Igor Jean Luc Ndiramiye"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-900 mb-2">
+                    Email address
+                  </label>
+                  <input
+                    type="email"
+                    value={formData.email}
+                    onChange={(e) => handleChange('email', e.target.value)}
+                    className="w-full max-w-md px-4 py-3 bg-gray-100 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                    placeholder="jeanluc05@live.com"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-900 mb-2">
+                    Phone number
+                  </label>
+                  <input
+                    type="tel"
+                    value={formData.phone}
+                    onChange={(e) => handleChange('phone', e.target.value)}
+                    className="w-full max-w-md px-4 py-3 border-2 border-gray-900 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                    placeholder="+250 789 660 036"
+                  />
+                </div>
+              </div>
+
+              <div className="flex gap-4">
+                <button
+                  onClick={handleBack}
+                  className="px-6 py-3 border-2 border-gray-300 rounded-md hover:bg-gray-50"
+                >
+                  ‹ Back
+                </button>
+                <button
+                  onClick={handleNext}
+                  className="bg-black text-white px-8 py-3 rounded-md hover:bg-gray-800"
+                >
+                  Next ›
+                </button>
+              </div>
+            </motion.div>
+          )}
+
+          {/* Step 6: UAE Passport */}
+          {step === 6 && (
+            <motion.div
+              key="step6"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -50 }}
+              className="bg-white rounded-lg p-6 sm:p-8 shadow-lg"
+            >
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8">
+                Do you hold a UAE passport?
+              </h2>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                <button
+                  onClick={() => {
+                    handleChange('hasPassport', 'yes');
+                    handleNext();
+                  }}
+                  className={`p-6 border-2 rounded-lg text-left transition-all ${
+                    formData.hasPassport === 'yes'
+                      ? 'border-green-500 bg-green-50'
+                      : 'border-gray-200 hover:border-gray-300'
+                  }`}
+                >
+                  <span className="text-lg font-medium">Yes</span>
+                </button>
+
+                <button
+                  onClick={() => {
+                    handleChange('hasPassport', 'no');
+                    handleNext();
+                  }}
+                  className={`p-6 border-2 rounded-lg text-left transition-all ${
+                    formData.hasPassport === 'no'
+                      ? 'border-green-500 bg-green-50'
+                      : 'border-gray-200 hover:border-gray-300'
+                  }`}
+                >
+                  <span className="text-lg font-medium">No</span>
+                </button>
+              </div>
+
+              <button
+                onClick={handleBack}
+                className="px-6 py-3 border-2 border-gray-300 rounded-md hover:bg-gray-50"
+              >
+                ‹ Back
+              </button>
+            </motion.div>
+          )}
+
+          {/* Step 7: UAE Resident */}
+          {step === 7 && (
+            <motion.div
+              key="step7"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -50 }}
+              className="bg-white rounded-lg p-6 sm:p-8 shadow-lg text-center"
+            >
+              <div className="flex justify-center mb-6">
+                <div className="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center">
+                  <Check className="w-10 h-10 text-white" />
+                </div>
+              </div>
+
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
+                That's all we need for now!
+              </h2>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                Thanks for the information
+              </h3>
+
+              <p className="text-gray-600 mb-8 max-w-md mx-auto">
+                Your enquiry has been submitted successfully and our team will be in touch shortly
+              </p>
+
+              <button
+                onClick={() => window.location.href = '/'}
+                className="bg-black text-white px-8 py-3 rounded-md hover:bg-gray-800"
+              >
+                Back to Home
+              </button>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </div>
+  );
+};
+
+export default MortgageCalculator;

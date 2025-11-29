@@ -43,7 +43,7 @@ const ContactForm = ({ title = "Find the Property of your choice", className = '
                 <Field
                   as="select"
                   name="location"
-                  className="w-full pl-9 sm:pl-10 pr-9 sm:pr-10 py-2 sm:py-3 border border-gray-300 rounded-full focus:ring-2 focus:ring-orange-500 focus:border-orange-500 appearance-none bg-white text-sm sm:text-base"
+                  className="w-full pl-9 sm:pl-10 pr-9 sm:pr-10 py-2 sm:py-3 border border-gray-300 rounded-full focus:ring-2 focus:ring-hot-deal-maroon-800 focus:border-hot-deal-maroon-800 appearance-none bg-white text-sm sm:text-base"
                 >
                 <option value="">Al Reem Island, Shams Abu Dhabi</option>
                 <option value="al-reem-island">Al Reem Island</option>
@@ -66,7 +66,7 @@ const ContactForm = ({ title = "Find the Property of your choice", className = '
                 <Field
                   as="select"
                   name="propertyType"
-                  className="w-full pl-9 sm:pl-10 pr-9 sm:pr-10 py-2 sm:py-3 border border-gray-300 rounded-full focus:ring-2 focus:ring-orange-500 focus:border-orange-500 appearance-none bg-white text-sm sm:text-base"
+                  className="w-full pl-9 sm:pl-10 pr-9 sm:pr-10 py-2 sm:py-3 border border-gray-300 rounded-full focus:ring-2 focus:ring-hot-deal-maroon-800 focus:border-hot-deal-maroon-800 appearance-none bg-white text-sm sm:text-base"
                 >
                 <option value="">Apartment</option>
                 <option value="apartment">Apartment</option>
@@ -87,7 +87,7 @@ const ContactForm = ({ title = "Find the Property of your choice", className = '
                 <Field
                   as="select"
                   name="maxPrice"
-                  className="w-full pl-9 sm:pl-10 pr-9 sm:pr-10 py-2 sm:py-3 border border-gray-300 rounded-full focus:ring-2 focus:ring-orange-500 focus:border-orange-500 appearance-none bg-white text-sm sm:text-base"
+                  className="w-full pl-9 sm:pl-10 pr-9 sm:pr-10 py-2 sm:py-3 border border-gray-300 rounded-full focus:ring-2 focus:ring-hot-deal-maroon-800 focus:border-hot-deal-maroon-800 appearance-none bg-white text-sm sm:text-base"
                 >
                 <option value="">AED 25,000,000</option>
                 <option value="1000000">AED 1,000,000</option>
@@ -103,7 +103,7 @@ const ContactForm = ({ title = "Find the Property of your choice", className = '
             <motion.button
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-orange-500 hover:bg-orange-600 text-white font-medium py-2 sm:py-3 px-4 sm:px-6 rounded-full transition-colors duration-200 text-sm sm:text-base"
+              className="w-full bg-hot-deal-maroon-800 hover:bg-hot-deal-maroon-900 text-white font-medium py-2 sm:py-3 px-4 sm:px-6 rounded-full transition-colors duration-200 text-sm sm:text-base"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >

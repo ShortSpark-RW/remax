@@ -18,7 +18,7 @@ const Companies = () => {
   const companies = [
     { name: 'Bayut', logo: bayut, color: 'text-green-500' },
     { name: 'Dubizzle', logo: dizzle, color: 'text-red-500' },
-    { name: 'Property Finder', logo: propertyFinder, color: 'text-orange-500' },
+    { name: 'Property Finder', logo: propertyFinder, color: 'text-hot-deal-maroon-800' },
     { name: 'Aldar', logo: logoBlack, color: 'text-black' }
   ];
 

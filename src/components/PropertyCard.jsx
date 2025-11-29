@@ -28,22 +28,22 @@ const PropertyCard = ({ property, index = 0 }) => {
       case 'for sale':
         return 'bg-green-500';
       case 'for rent':
-        return 'bg-orange-500';
+        return 'bg-hot-deal-maroon-800';
       case 'sold':
         return 'bg-red-500';
       default:
-        return 'bg-orange-500';
+        return 'bg-hot-deal-maroon-800';
     }
   };
 
   const getBadgeColor = (badge) => {
     switch (badge?.toLowerCase()) {
       case 'featured':
-        return 'bg-orange-500';
+        return 'bg-hot-deal-maroon-800';
       case 'hot':
         return 'bg-red-500';
       case 'trendy':
-        return 'bg-orange-500';
+        return 'bg-hot-deal-maroon-800';
       default:
         return 'bg-blue-500';
     }
@@ -86,7 +86,7 @@ const PropertyCard = ({ property, index = 0 }) => {
 
         {/* Featured Badge */}
         {featured && (
-          <div className="absolute top-2 sm:top-4 left-2 sm:left-4 bg-orange-500 text-white px-2 py-1 text-xs font-medium rounded">
+          <div className="absolute top-2 sm:top-4 left-2 sm:left-4 bg-hot-deal-maroon-800 text-white px-2 py-1 text-xs font-medium rounded">
             Featured
           </div>
         )}

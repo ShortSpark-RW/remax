@@ -50,7 +50,7 @@ const AIChatButton = () => {
     <>
       {/* Chat Button */}
       <motion.button
-        className="fixed bottom-6 right-6 z-50 bg-orange-600 hover:bg-orange-700 text-white p-4 shadow-lg transition-colors duration-200 group"
+        className="fixed bottom-6 right-6 z-50 bg-hot-deal-maroon-900 hover:bg-hot-deal-maroon-700 text-white p-4 shadow-lg transition-colors duration-200 group"
         onClick={() => setIsOpen(!isOpen)}
         initial={{ scale: 0, rotate: -180 }}
         animate={{ scale: 1, rotate: 0 }}
@@ -112,7 +112,7 @@ const AIChatButton = () => {
             }}
           >
             {/* Chat Header */}
-            <div className="bg-orange-600 text-white p-4 flex items-center space-x-3">
+            <div className="bg-hot-deal-maroon-900 text-white p-4 flex items-center space-x-3">
               <div className="w-8 h-8 bg-white/20 flex items-center justify-center">
                 <Bot className="h-5 w-5" />
               </div>
@@ -136,7 +136,7 @@ const AIChatButton = () => {
                     className={`max-w-xs p-3 ${
                       message.isBot
                         ? 'bg-gray-100 text-gray-800'
-                        : 'bg-orange-600 text-white'
+                        : 'bg-hot-deal-maroon-900 text-white'
                     }`}
                   >
                     <p className="text-sm">{message.text}</p>
@@ -163,7 +163,7 @@ const AIChatButton = () => {
                 />
                 <motion.button
                   onClick={handleSendMessage}
-                  className="bg-orange-600 hover:bg-orange-700 text-white p-2 transition-colors duration-200"
+                  className="bg-hot-deal-maroon-900 hover:bg-hot-deal-maroon-700 text-white p-2 transition-colors duration-200"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   disabled={!inputMessage.trim()}

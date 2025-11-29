@@ -37,7 +37,7 @@ const FloatingLanguageButton = ({ className = '' }) => {
               className="bg-white/70 backdrop-blur-md rounded-l-lg pr-3 py-3 flex flex-col items-start border border-teal-50 shadow-2xl"
             >
               <div className="flex items-center space-x-2 px-3 pb-2 border-b border-teal-100 w-full">
-                <div className="w-8 h-8 bg-orange-100 text-teal-600 rounded-full flex items-center justify-center">
+                <div className="w-8 h-8 bg-hot-deal-maroon-100 text-teal-600 rounded-full flex items-center justify-center">
                   <Globe className="h-4 w-4" />
                 </div>
                 <div className="text-sm font-semibold text-gray-700">Language</div>
@@ -47,7 +47,7 @@ const FloatingLanguageButton = ({ className = '' }) => {
                   <button
                     key={lang.code}
                     onClick={() => changeLanguage(lang.code)}
-                    className={`flex items-center space-x-3 px-3 py-2 rounded-md hover:bg-white/60 focus:outline-none transition-all duration-150 ${lang.code === current.code ? 'bg-orange-600 text-white shadow-md' : 'text-gray-700'}`}
+                    className={`flex items-center space-x-3 px-3 py-2 rounded-md hover:bg-white/60 focus:outline-none transition-all duration-150 ${lang.code === current.code ? 'bg-hot-deal-maroon-900 text-white shadow-md' : 'text-gray-700'}`}
                   >
                     <span className={`text-xl ${lang.code === current.code ? '' : ''}`}>{lang.flag}</span>
                     <span className="text-sm font-medium">{lang.name}</span>
@@ -65,7 +65,7 @@ const FloatingLanguageButton = ({ className = '' }) => {
           onClick={() => setIsOpen(!isOpen)}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="w-12 h-12 rounded-full bg-orange-600 hover:bg-orange-700 text-white shadow-lg flex items-center justify-center text-xl ml-2"
+          className="w-12 h-12 rounded-full bg-hot-deal-maroon-900 hover:bg-hot-deal-maroon-700 text-white shadow-lg flex items-center justify-center text-xl ml-2"
           aria-label="Language switcher"
           title={`Language: ${current.name}`}
         >

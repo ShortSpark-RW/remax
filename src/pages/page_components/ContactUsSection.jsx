@@ -74,7 +74,7 @@ const ContactUsSection = () => {
                       <Field
                         type="text"
                         name="firstName"
-                        className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-100 border-0 rounded-lg focus:ring-2 focus:ring-orange-500 focus:bg-white transition-all text-sm sm:text-base"
+                        className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-100 border-0 rounded-lg focus:ring-2 focus:ring-hot-deal-maroon-800 focus:bg-white transition-all text-sm sm:text-base"
                       />
                       {errors.firstName && touched.firstName && (
                         <p className="text-red-500 text-xs mt-1">{errors.firstName}</p>
@@ -87,7 +87,7 @@ const ContactUsSection = () => {
                       <Field
                         type="text"
                         name="lastName"
-                        className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-100 border-0 rounded-lg focus:ring-2 focus:ring-orange-500 focus:bg-white transition-all text-sm sm:text-base"
+                        className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-100 border-0 rounded-lg focus:ring-2 focus:ring-hot-deal-maroon-800 focus:bg-white transition-all text-sm sm:text-base"
                       />
                       {errors.lastName && touched.lastName && (
                         <p className="text-red-500 text-xs mt-1">{errors.lastName}</p>
@@ -103,7 +103,7 @@ const ContactUsSection = () => {
                     <Field
                       type="email"
                       name="email"
-                      className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-100 border-0 rounded-lg focus:ring-2 focus:ring-orange-500 focus:bg-white transition-all text-sm sm:text-base"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-100 border-0 rounded-lg focus:ring-2 focus:ring-hot-deal-maroon-800 focus:bg-white transition-all text-sm sm:text-base"
                     />
                     {errors.email && touched.email && (
                       <p className="text-red-500 text-xs mt-1">{errors.email}</p>
@@ -119,7 +119,7 @@ const ContactUsSection = () => {
                       <Field
                         as="select"
                         name="countryCode"
-                        className="w-20 sm:w-24 px-2 sm:px-3 py-2 sm:py-3 bg-gray-100 border-0 rounded-lg focus:ring-2 focus:ring-orange-500 focus:bg-white transition-all text-sm sm:text-base"
+                        className="w-20 sm:w-24 px-2 sm:px-3 py-2 sm:py-3 bg-gray-100 border-0 rounded-lg focus:ring-2 focus:ring-hot-deal-maroon-800 focus:bg-white transition-all text-sm sm:text-base"
                       >
                         <option value="+250">+250</option>
                         <option value="+971">+971</option>
@@ -129,7 +129,7 @@ const ContactUsSection = () => {
                       <Field
                         type="tel"
                         name="phoneNumber"
-                        className="flex-1 px-3 sm:px-4 py-2 sm:py-3 bg-gray-100 border-0 rounded-lg focus:ring-2 focus:ring-orange-500 focus:bg-white transition-all text-sm sm:text-base"
+                        className="flex-1 px-3 sm:px-4 py-2 sm:py-3 bg-gray-100 border-0 rounded-lg focus:ring-2 focus:ring-hot-deal-maroon-800 focus:bg-white transition-all text-sm sm:text-base"
                       />
                     </div>
                     {errors.phoneNumber && touched.phoneNumber && (
@@ -141,7 +141,7 @@ const ContactUsSection = () => {
                   <motion.button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 sm:py-4 rounded-lg transition-colors duration-200 shadow-lg text-sm sm:text-base"
+                    className="w-full bg-hot-deal-maroon-800 hover:bg-hot-deal-maroon-900 text-white font-semibold py-3 sm:py-4 rounded-lg transition-colors duration-200 shadow-lg text-sm sm:text-base"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >

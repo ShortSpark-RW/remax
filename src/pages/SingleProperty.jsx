@@ -223,35 +223,35 @@ const SingleProperty = () => {
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">Property Features</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-orange-500"></div>
+                    <div className="w-2 h-2 bg-hot-deal-maroon-800"></div>
                     <span>Central Air Conditioning</span>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-orange-500"></div>
+                    <div className="w-2 h-2 bg-hot-deal-maroon-800"></div>
                     <span>Hardwood Floors</span>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-orange-500"></div>
+                    <div className="w-2 h-2 bg-hot-deal-maroon-800"></div>
                     <span>Updated Kitchen</span>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-orange-500"></div>
+                    <div className="w-2 h-2 bg-hot-deal-maroon-800"></div>
                     <span>Master Suite</span>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-orange-500"></div>
+                    <div className="w-2 h-2 bg-hot-deal-maroon-800"></div>
                     <span>Walk-in Closets</span>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-orange-500"></div>
+                    <div className="w-2 h-2 bg-hot-deal-maroon-800"></div>
                     <span>Private Balcony</span>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-orange-500"></div>
+                    <div className="w-2 h-2 bg-hot-deal-maroon-800"></div>
                     <span>High Ceilings</span>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-orange-500"></div>
+                    <div className="w-2 h-2 bg-hot-deal-maroon-800"></div>
                     <span>Energy Efficient</span>
                   </div>
                 </div>

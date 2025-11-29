@@ -208,7 +208,7 @@ function OldDisgnSections() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-orange-600 relative">
+      <section className="py-20 bg-hot-deal-maroon-900 relative">
         {/* Diagonal separators */}
         {/* <div className="absolute top-0 left-0 w-full h-16 bg-gray-50 transform skew-y-1 origin-top-left"></div>
         <div className="absolute bottom-0 left-0 w-full h-16 bg-white transform -skew-y-1 origin-bottom-left"></div> */}
@@ -339,7 +339,7 @@ function OldDisgnSections() {
       </section>
 
       {/* Bottom Call to Action */}
-      <section className="py-20 bg-orange-600 relative overflow-hidden">
+      <section className="py-20 bg-hot-deal-maroon-900 relative overflow-hidden">
         {/* Diagonal separators */}
         {/* <div className="absolute top-0 left-0 w-full h-16 bg-white transform -skew-y-1 origin-top-left"></div>
         <div className="absolute bottom-0 left-0 w-full h-16 bg-white transform skew-y-1 origin-bottom-left"></div> */}
@@ -383,7 +383,7 @@ function OldDisgnSections() {
       {/* Partners Section */}
       <section className="py-20 bg-white relative">
         {/* Diagonal separator */}
-        {/* <div className="absolute top-0 left-0 w-full h-16 bg-orange-600 transform -skew-y-1 origin-top-left"></div>
+        {/* <div className="absolute top-0 left-0 w-full h-16 bg-hot-deal-maroon-900 transform -skew-y-1 origin-top-left"></div>
         <div className="absolute bottom-0 left-0 w-full h-16 bg-gray-800 transform skew-y-1 origin-bottom-left"></div> */}
         
         <div className="container mx-auto px-4 relative z-10">

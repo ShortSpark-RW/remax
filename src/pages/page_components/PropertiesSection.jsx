@@ -33,7 +33,7 @@ const PropertiesSection = () => {
                   onClick={() => setActiveTab(tab)}
                   className={`px-6 py-3 rounded-md font-medium transition-colors duration-200 ${
                     activeTab === tab
-                      ? 'bg-orange-600 text-white'
+                      ? 'bg-hot-deal-maroon-900 text-white'
                       : 'text-gray-600 hover:text-teal-600'
                   }`}
                 >
@@ -63,7 +63,7 @@ const PropertiesSection = () => {
                   key={page}
                   className={`w-10 h-10 font-medium transition-colors duration-200 ${
                     page === 1
-                      ? 'bg-orange-600 text-white'
+                      ? 'bg-hot-deal-maroon-900 text-white'
                       : 'bg-gray-200 text-gray-600 hover:bg-gray-300'
                   }`}
                   whileHover={{ scale: 1.1 }}

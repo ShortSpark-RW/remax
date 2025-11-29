@@ -17,6 +17,7 @@ import Companies from './page_components/Companies';
 import ListPropertySection from './page_components/ListPropertySection';
 import Testimonials from './page_components/Testimonials';
 import Agents from './page_components/Agents';
+import MortgageCalculator from '../components/MortgageCalculator';
 
 const Home = () => {
   const { t } = useTranslation()
@@ -57,7 +58,7 @@ const Home = () => {
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 pt-4">
                     <motion.button 
-                      className="bg-orange-600 hover:bg-orange-700 px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-sm sm:text-base font-medium transition-colors"
+                      className="bg-hot-deal-maroon-900 hover:bg-hot-deal-maroon-700 px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-sm sm:text-base font-medium transition-colors"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
@@ -89,6 +90,7 @@ const Home = () => {
 
       {/* Properties Section */}
       <TabsSection />
+      <MortgageCalculator />
       <ContactUsSection />
       <Companies />
       <ListPropertySection />

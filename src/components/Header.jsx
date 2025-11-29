@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Phone, User, Search } from 'lucide-react';
-import logo from '../assets/logo_black.png';
+import logo from '../assets/logo_hd.png';
 import { useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from './LanguageSwitcher';
@@ -116,7 +116,7 @@ const Header = () => {
                     href={item.href}
                     className={`px-2 lg:px-3 xl:px-4 py-2 text-xs md:text-sm lg:text-base font-medium font-sans transition-colors duration-200 inline-flex items-center rounded-md ${
                       isActive || activeDropdown === item.hasDropdown
-                        ? 'bg-orange-500 text-white'
+                        ? 'bg-hot-deal-maroon-800 text-white'
                         : 'text-gray-700 hover:text-white hover:bg-gray-700'
                     }`}
                     whileHover={{ scale: 1.05 }}
@@ -152,7 +152,7 @@ const Header = () => {
                       <div className="p-3 lg:p-4 xl:p-6 grid grid-cols-1 sm:grid-cols-2 gap-3 lg:gap-4 xl:gap-6">
                         {dropdownData[item.hasDropdown].sections.map((section, sectionIdx) => (
                           <div key={section.title} className="space-y-3">
-                            <h3 className="text-sm font-semibold text-orange-600 uppercase tracking-wide border-b border-orange-100 pb-2">
+                            <h3 className="text-sm font-semibold text-hot-deal-maroon-900 uppercase tracking-wide border-b border-hot-deal-maroon-100 pb-2">
                               {section.title}
                             </h3>
                             <div className="space-y-2">
@@ -160,12 +160,12 @@ const Header = () => {
                                 <motion.a
                                   key={dropdownItem.href}
                                   href={dropdownItem.href}
-                                  className="group flex flex-col p-3 hover:bg-gradient-to-r hover:from-orange-50 hover:to-teal-50 rounded-md transition-all duration-200"
+                                  className="group flex flex-col p-3 hover:bg-gradient-to-r hover:from-hot-deal-maroon-50 hover:to-teal-50 rounded-md transition-all duration-200"
                                   initial={{ opacity: 0, x: -20 }}
                                   animate={{ opacity: 1, x: 0 }}
                                   transition={{ delay: (sectionIdx * 2 + idx) * 0.1 }}
                                 >
-                                  <span className="font-medium text-gray-900 group-hover:text-orange-600 text-sm">
+                                  <span className="font-medium text-gray-900 group-hover:text-hot-deal-maroon-900 text-sm">
                                     {dropdownItem.title}
                                   </span>
                                 </motion.a>
@@ -184,7 +184,7 @@ const Header = () => {
           {/* Contact Info & Actions */}
           <div className="hidden sm:flex items-center space-x-2 md:space-x-3 lg:space-x-4">
             <motion.button
-              className="bg-orange-500 hover:bg-orange-600 text-white px-3 md:px-4 lg:px-6 py-2 text-xs md:text-sm font-medium rounded-md transition-colors duration-200"
+              className="bg-hot-deal-maroon-800 hover:bg-hot-deal-maroon-900 text-white px-3 md:px-4 lg:px-6 py-2 text-xs md:text-sm font-medium rounded-md transition-colors duration-200"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -222,7 +222,7 @@ const Header = () => {
                       onClick={() => hasDropdown && handleDropdownEnter(activeDropdown === item.hasDropdown ? null : item.hasDropdown)}
                       className={`w-full px-4 py-3 text-sm font-medium transition-colors duration-200 flex justify-between items-center rounded-md ${
                         activeDropdown === item.hasDropdown
-                          ? 'bg-orange-500 text-white'
+                          ? 'bg-hot-deal-maroon-800 text-white'
                           : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
                       }`}
                       initial={{ opacity: 0, x: -20 }}
@@ -254,7 +254,7 @@ const Header = () => {
                       >
                         {dropdownData[item.hasDropdown].sections.map((section, sectionIdx) => (
                           <div key={section.title} className="mb-4">
-                            <h4 className="text-xs font-semibold text-orange-400 uppercase tracking-wide mb-2">
+                            <h4 className="text-xs font-semibold text-hot-deal-maroon-400 uppercase tracking-wide mb-2">
                               {section.title}
                             </h4>
                             {section.items.map((dropdownItem, idx) => (

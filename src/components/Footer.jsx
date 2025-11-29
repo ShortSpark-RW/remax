@@ -107,7 +107,7 @@ const Footer = () => {
                 <motion.a
                   key={social.label}
                   href={social.href}
-                  className="p-1.5 sm:p-2 bg-gray-700 hover:bg-orange-600 transition-colors duration-200 rounded-md"
+                  className="p-1.5 sm:p-2 bg-gray-700 hover:bg-hot-deal-maroon-900 transition-colors duration-200 rounded-md"
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   whileTap={{ scale: 0.95 }}
                   initial={{ opacity: 0, scale: 0 }}
@@ -141,7 +141,7 @@ const Footer = () => {
                   <motion.button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-orange-500 hover:bg-orange-600 text-white font-medium py-2 sm:py-3 px-4 transition-colors duration-200 disabled:opacity-50 rounded-md text-sm sm:text-base"
+                    className="w-full bg-hot-deal-maroon-800 hover:bg-hot-deal-maroon-900 text-white font-medium py-2 sm:py-3 px-4 transition-colors duration-200 disabled:opacity-50 rounded-md text-sm sm:text-base"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >

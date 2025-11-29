@@ -133,13 +133,13 @@ const ListLayout = () => {
                 <span className="text-xs sm:text-sm text-gray-600">View:</span>
                 <button
                   onClick={() => setViewMode('grid')}
-                  className={`p-1.5 sm:p-2 rounded ${viewMode === 'grid' ? 'bg-orange-600 text-white' : 'bg-gray-200 text-gray-600'}`}
+                  className={`p-1.5 sm:p-2 rounded ${viewMode === 'grid' ? 'bg-hot-deal-maroon-900 text-white' : 'bg-gray-200 text-gray-600'}`}
                 >
                   <Grid className="h-3 w-3 sm:h-4 sm:w-4" />
                 </button>
                 <button
                   onClick={() => setViewMode('list')}
-                  className={`p-1.5 sm:p-2 rounded ${viewMode === 'list' ? 'bg-orange-600 text-white' : 'bg-gray-200 text-gray-600'}`}
+                  className={`p-1.5 sm:p-2 rounded ${viewMode === 'list' ? 'bg-hot-deal-maroon-900 text-white' : 'bg-gray-200 text-gray-600'}`}
                 >
                   <List className="h-3 w-3 sm:h-4 sm:w-4" />
                 </button>
@@ -225,7 +225,7 @@ const ListLayout = () => {
                       key={page}
                       className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full font-medium transition-colors duration-200 text-sm sm:text-base ${
                         page === 1
-                          ? 'bg-orange-600 text-white'
+                          ? 'bg-hot-deal-maroon-900 text-white'
                           : 'bg-gray-200 text-gray-600 hover:bg-gray-300'
                       }`}
                       whileHover={{ scale: 1.1 }}

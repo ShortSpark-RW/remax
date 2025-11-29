@@ -84,7 +84,7 @@ const AgentCard = ({ agent, index = 0 }) => {
               <motion.a
                 key={platform}
                 href={url}
-                className="p-1.5 sm:p-2 bg-gray-100 hover:bg-orange-600 hover:text-white transition-colors duration-200 rounded-md"
+                className="p-1.5 sm:p-2 bg-gray-100 hover:bg-hot-deal-maroon-900 hover:text-white transition-colors duration-200 rounded-md"
                 whileHover={{ scale: 1.1, rotate: 5 }}
                 whileTap={{ scale: 0.95 }}
               >
